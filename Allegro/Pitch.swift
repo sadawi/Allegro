@@ -8,50 +8,26 @@
 
 import Foundation
 
-postfix operator ♯ { }
-postfix operator ♭ { }
+/**
+Pitches represent absolute frequencies of notes; different octaves are different pitches.
 
-public postfix func ♯(pitchClass:PitchClass) -> PitchClass {
-    return pitchClass.sharp
-}
-
-public postfix func ♭(pitchClass:PitchClass) -> PitchClass {
-    return pitchClass.flat
-}
-
-public enum PitchClass: Int {
-    case C          = 0
-    case Csharp     = 1
-    case D          = 2
-    case Dsharp     = 3
-    case E          = 4
-    case F          = 5
-    case Fsharp     = 6
-    case G          = 7
-    case Gsharp     = 8
-    case A          = 9
-    case Asharp     = 10
-    case B          = 11
-    
-    static let Dflat = PitchClass.Csharp
-    static let Eflat = PitchClass.Dsharp
-    static let Gflat = PitchClass.Fsharp
-    static let Aflat = PitchClass.Gsharp
-    static let Bflat = PitchClass.Asharp
-    
-    public var sharp: PitchClass {
-        return PitchClass(rawValue: (self.rawValue+1) % Interval.Octave.rawValue)!
-    }
-
-    public var flat: PitchClass {
-        return PitchClass(rawValue: (self.rawValue+11) % 12)!
-    }
-}
+These are equal tempered pitches, defined as a number of semitones from an arbitrary base (say, C0).
+*/
 
 public struct Pitch {
-    static var tuning = Tuning.A440
+    public var semitonesFromBase:Float = 0
     
-    private var semitonesFromBase:Float = 0
+    // MARK: -
+
+    public var octave:Int {
+        return Int(floor(self.semitonesFromBase / Float(Interval.Octave.rawValue)))
+    }
+
+    public var pitchClass:PitchClass {
+        return PitchClass(semitones: Int(self.semitonesFromBase))
+    }
+    
+    // MARK: - Transpositions
     
     public func transposed(up interval: Interval) -> Pitch {
         return self.transposed(by: Float(interval.rawValue))
@@ -64,4 +40,21 @@ public struct Pitch {
     public func transposed(by semitones: Float) -> Pitch {
         return Pitch(semitonesFromBase: self.semitonesFromBase + semitones)
     }
+    
+    // MARK: - Building other data types
+    
+    /**
+    Add a duration to a pitch, and you have a note.
+    */
+    public func note(duration:Duration) -> Note {
+        return Note(pitch:self, duration:duration)
+    }
+
+}
+
+/**
+Now you can write A[4]/16
+*/
+public func /(pitch:Pitch, divisor:Int) -> Note {
+    return pitch.note(Duration(length: 1/Float(divisor)))
 }

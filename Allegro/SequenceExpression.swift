@@ -9,7 +9,11 @@
 import Foundation
 
 public class SequenceExpression: CompoundExpression {
-    public var expressions:[Temporal] = []
+    public var expressions:[Expression] = []
+    
+    public init(expressions:[Expression]=[]) {
+        self.expressions = expressions
+    }
     
     public var duration: Duration {
         var result:Float = 0.0
@@ -19,7 +23,7 @@ public class SequenceExpression: CompoundExpression {
         return Duration(length: result)
     }
     
-    public func add(expression:Temporal) {
+    public func add(expression:Expression) {
         self.expressions.append(expression)
     }
 }

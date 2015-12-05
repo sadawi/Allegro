@@ -22,10 +22,25 @@ class AllegroTests: XCTestCase {
     }
     
     func testPitches() {
-        XCTAssertEqual(PitchClass.C♯, PitchClass.Csharp)
-        XCTAssertEqual(PitchClass.C♭, PitchClass.B)
+        XCTAssertEqual(C♯, C.sharp)
+        XCTAssertEqual(C♭, B)
         
-        XCTAssertEqual(PitchClass.Dflat, PitchClass.Csharp)
+        XCTAssertEqual(D.flat, C.sharp)
+        
+        let pitch:Pitch = C.sharp.pitch(0)
+        let pitch2:Pitch = C.sharp[0]
+        XCTAssertEqual(pitch.semitonesFromBase, 1)
+        XCTAssertEqual(pitch2.semitonesFromBase, 1)
+
+        let note = C.sharp.pitch(0).note(Duration.Quarter)
+        XCTAssertEqual(note.duration, Duration.Quarter)
+        
+        let note2:Note = C.sharp[0]/4
+        XCTAssertEqual(note2.duration, Duration.Quarter)
+        
+        
+        XCTAssertEqual(B.sharp[5].octave, 5)
+        XCTAssertEqual(B.flat[2].pitchClass, B.flat)
     }
     
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct Rest: Temporal {
+public struct Rest: Expression {
     public var duration:Duration
 }

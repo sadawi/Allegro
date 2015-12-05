@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Temporal {
+public protocol Expression {
     var duration:Duration { get }
 }
 

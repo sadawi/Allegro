@@ -9,12 +9,17 @@
 import Foundation
 
 public struct Duration: Equatable {
+    /**
+    Arbitrary units representing the length in time.
+    */
     public var length:Float
     
     public var dotted: Duration {
-        var result = self
-        result.length *= 1.5
-        return result
+        return self * 1.5
+    }
+    
+    public var triplet: Duration {
+        return self * 2.0 / 3.0
     }
     
     public static let Whole                     = Duration(length: 1)
@@ -33,6 +38,10 @@ public func == (left:Duration, right:Duration) -> Bool {
 
 public func / (duration:Duration, number:Float) -> Duration {
     return Duration(length: duration.length / number)
+}
+
+public func / (duration:Duration, number:Int) -> Duration {
+    return Duration(length: duration.length / Float(number))
 }
 
 public func * (duration:Duration, number:Float) -> Duration {

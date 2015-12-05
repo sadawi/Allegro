@@ -23,6 +23,9 @@
 		22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */; settings = {ASSET_TAGS = (); }; };
 		22C8F5101C12ACEA00B1952B /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50F1C12ACE900B1952B /* Interval.swift */; settings = {ASSET_TAGS = (); }; };
 		22C8F5121C13443C00B1952B /* Tuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5111C13443C00B1952B /* Tuning.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5131C13512300B1952B /* PolyphonicExpression.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5161C13552000B1952B /* PitchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5151C13552000B1952B /* PitchClass.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5181C13622800B1952B /* experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5171C13622800B1952B /* experiments.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelExpression.swift; sourceTree = "<group>"; };
 		22C8F50F1C12ACE900B1952B /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		22C8F5111C13443C00B1952B /* Tuning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuning.swift; sourceTree = "<group>"; };
+		22C8F5131C13512300B1952B /* PolyphonicExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolyphonicExpression.swift; sourceTree = "<group>"; };
+		22C8F5151C13552000B1952B /* PitchClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClass.swift; sourceTree = "<group>"; };
+		22C8F5171C13622800B1952B /* experiments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = experiments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				22C8F4DE1C125E2800B1952B /* Info.plist */,
 				22C8F4DC1C125E2800B1952B /* Allegro.h */,
 				22C8F5021C12A1C600B1952B /* models */,
+				22C8F5171C13622800B1952B /* experiments.swift */,
 			);
 			path = Allegro;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 				22C8F4FB1C12A0A700B1952B /* Chord.swift */,
 				22C8F50F1C12ACE900B1952B /* Interval.swift */,
 				22C8F5111C13443C00B1952B /* Tuning.swift */,
+				22C8F5151C13552000B1952B /* PitchClass.swift */,
 			);
 			name = basic;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				22C8F5091C12A3C100B1952B /* CompoundExpression.swift */,
 				22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */,
 				22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */,
+				22C8F5131C13512300B1952B /* PolyphonicExpression.swift */,
 			);
 			name = compound;
 			sourceTree = "<group>";
@@ -273,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C8F5181C13622800B1952B /* experiments.swift in Sources */,
 				22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */,
 				22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */,
+				22C8F5161C13552000B1952B /* PitchClass.swift in Sources */,
 				22C8F5101C12ACEA00B1952B /* Interval.swift in Sources */,
 				22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */,
 				22C8F5121C13443C00B1952B /* Tuning.swift in Sources */,
@@ -285,6 +296,7 @@
 				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,
 				22C8F5011C12A1B700B1952B /* protocols.swift in Sources */,
 				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
+				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
 				22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

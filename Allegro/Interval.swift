@@ -22,6 +22,4 @@ public enum Interval: Int {
     case MinorSeventh       = 10
     case MajorSeventh       = 11
     case Octave             = 12
-    
-    static let MinorSecond = Interval.HalfStep
 }

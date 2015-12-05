@@ -8,6 +8,15 @@
 
 import Foundation
 
-public struct ChordedNote {
-    public var pitches:[Pitch]
+public struct ChordedNote: Expression {
+    public var chord:Chord
+    public var duration:Duration
+    
+    // MARK: - To other data types
+    
+    public var arpeggio: SequenceExpression {
+        let notes:[Expression] = chord.pitches.map { Note(pitch: $0, duration: duration / chord.pitches.count) }
+        return SequenceExpression(expressions:notes)
+    }
+
 }

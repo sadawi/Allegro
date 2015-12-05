@@ -9,7 +9,7 @@
 import Foundation
 
 public class ParallelExpression: CompoundExpression {
-    public var expressions:[Temporal] = []
+    public var expressions:[Expression] = []
     
     public var duration: Duration {
         var result:Float = 0.0

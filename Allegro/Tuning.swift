@@ -9,5 +9,8 @@
 import Foundation
 
 enum Tuning: Float {
-    case A440 = 440.0
+    case A440       = 440
+    case Baroque    = 415
+    case Chorton    = 466
+    case Classical  = 430
 }

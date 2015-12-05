@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol CompoundExpression: Temporal {
-    var expressions:[Temporal] { get }
+public protocol CompoundExpression: Expression {
+    var expressions:[Expression] { get }
 }
