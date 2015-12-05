@@ -10,6 +10,19 @@
 		22C8F4DD1C125E2800B1952B /* Allegro.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8F4DC1C125E2800B1952B /* Allegro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C8F4E41C125E2800B1952B /* Allegro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8F4D91C125E2800B1952B /* Allegro.framework */; settings = {ASSET_TAGS = (); }; };
 		22C8F4E91C125E2800B1952B /* AllegroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4E81C125E2800B1952B /* AllegroTests.swift */; };
+		22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4F31C125EE000B1952B /* Pitch.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F4F61C1299E700B1952B /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4F51C1299E700B1952B /* Duration.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F4F81C129EEE00B1952B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4F71C129EEE00B1952B /* Note.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4F91C129F8D00B1952B /* Scale.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F4FC1C12A0A700B1952B /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4FB1C12A0A700B1952B /* Chord.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5011C12A1B700B1952B /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5001C12A1B700B1952B /* protocols.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5071C12A2A700B1952B /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5061C12A2A700B1952B /* Rest.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5091C12A3C100B1952B /* CompoundExpression.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5101C12ACEA00B1952B /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50F1C12ACE900B1952B /* Interval.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F5121C13443C00B1952B /* Tuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5111C13443C00B1952B /* Tuning.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +42,19 @@
 		22C8F4E31C125E2800B1952B /* AllegroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllegroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C8F4E81C125E2800B1952B /* AllegroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllegroTests.swift; sourceTree = "<group>"; };
 		22C8F4EA1C125E2800B1952B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22C8F4F31C125EE000B1952B /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
+		22C8F4F51C1299E700B1952B /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		22C8F4F71C129EEE00B1952B /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		22C8F4F91C129F8D00B1952B /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		22C8F4FB1C12A0A700B1952B /* Chord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
+		22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordedNote.swift; sourceTree = "<group>"; };
+		22C8F5001C12A1B700B1952B /* protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		22C8F5061C12A2A700B1952B /* Rest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		22C8F5091C12A3C100B1952B /* CompoundExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundExpression.swift; sourceTree = "<group>"; };
+		22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceExpression.swift; sourceTree = "<group>"; };
+		22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelExpression.swift; sourceTree = "<group>"; };
+		22C8F50F1C12ACE900B1952B /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		22C8F5111C13443C00B1952B /* Tuning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +97,9 @@
 		22C8F4DB1C125E2800B1952B /* Allegro */ = {
 			isa = PBXGroup;
 			children = (
-				22C8F4DC1C125E2800B1952B /* Allegro.h */,
 				22C8F4DE1C125E2800B1952B /* Info.plist */,
+				22C8F4DC1C125E2800B1952B /* Allegro.h */,
+				22C8F5021C12A1C600B1952B /* models */,
 			);
 			path = Allegro;
 			sourceTree = "<group>";
@@ -84,6 +111,58 @@
 				22C8F4EA1C125E2800B1952B /* Info.plist */,
 			);
 			path = AllegroTests;
+			sourceTree = "<group>";
+		};
+		22C8F5021C12A1C600B1952B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				22C8F5031C12A23A00B1952B /* basic */,
+				22C8F5041C12A25500B1952B /* scales */,
+				22C8F5051C12A28200B1952B /* simple */,
+				22C8F5081C12A3AC00B1952B /* compound */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		22C8F5031C12A23A00B1952B /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				22C8F4F31C125EE000B1952B /* Pitch.swift */,
+				22C8F4F51C1299E700B1952B /* Duration.swift */,
+				22C8F4FB1C12A0A700B1952B /* Chord.swift */,
+				22C8F50F1C12ACE900B1952B /* Interval.swift */,
+				22C8F5111C13443C00B1952B /* Tuning.swift */,
+			);
+			name = basic;
+			sourceTree = "<group>";
+		};
+		22C8F5041C12A25500B1952B /* scales */ = {
+			isa = PBXGroup;
+			children = (
+				22C8F4F91C129F8D00B1952B /* Scale.swift */,
+			);
+			name = scales;
+			sourceTree = "<group>";
+		};
+		22C8F5051C12A28200B1952B /* simple */ = {
+			isa = PBXGroup;
+			children = (
+				22C8F5001C12A1B700B1952B /* protocols.swift */,
+				22C8F4F71C129EEE00B1952B /* Note.swift */,
+				22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */,
+				22C8F5061C12A2A700B1952B /* Rest.swift */,
+			);
+			name = simple;
+			sourceTree = "<group>";
+		};
+		22C8F5081C12A3AC00B1952B /* compound */ = {
+			isa = PBXGroup;
+			children = (
+				22C8F5091C12A3C100B1952B /* CompoundExpression.swift */,
+				22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */,
+				22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */,
+			);
+			name = compound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +221,7 @@
 		22C8F4D01C125E2800B1952B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sam Williams";
 				TargetAttributes = {
@@ -193,6 +273,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */,
+				22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */,
+				22C8F5101C12ACEA00B1952B /* Interval.swift in Sources */,
+				22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */,
+				22C8F5121C13443C00B1952B /* Tuning.swift in Sources */,
+				22C8F4FC1C12A0A700B1952B /* Chord.swift in Sources */,
+				22C8F5071C12A2A700B1952B /* Rest.swift in Sources */,
+				22C8F4F61C1299E700B1952B /* Duration.swift in Sources */,
+				22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */,
+				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,
+				22C8F5011C12A1B700B1952B /* protocols.swift in Sources */,
+				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
+				22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +400,7 @@
 		22C8F4EE1C125E2800B1952B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +411,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.Allegro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		22C8F4EF1C125E2800B1952B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +471,7 @@
 				22C8F4EF1C125E2800B1952B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22C8F4F01C125E2800B1952B /* Build configuration list for PBXNativeTarget "AllegroTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +480,7 @@
 				22C8F4F21C125E2800B1952B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
