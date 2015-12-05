@@ -21,11 +21,7 @@ public postfix func ♭(pitchClass:PitchClass) -> PitchClass {
 
 
 /**
-
 The chroma of a pitch, regardless of octave.  C4 and C0 both have a pitchClass of C.
-
-
-
 */
 public struct PitchClass: Equatable {
     private var _semitones: Int = 0
@@ -35,7 +31,7 @@ public struct PitchClass: Equatable {
     */
     public var semitones:Int {
         get { return _semitones }
-        set { _semitones = newValue % Interval.Octave.rawValue }
+        set { _semitones = newValue % Interval.Octave.semitones }
     }
 
     public init(semitones: Int) {
@@ -59,7 +55,7 @@ public struct PitchClass: Equatable {
     }
 
     public func pitch(octave:Int) -> Pitch {
-        return Pitch(semitonesFromBase: Float(octave * Interval.Octave.rawValue + self.semitones))
+        return Pitch(semitonesFromBase: Float(octave * Interval.Octave.semitones + self.semitones))
     }
     
 }

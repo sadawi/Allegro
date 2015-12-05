@@ -8,9 +8,16 @@
 
 import Foundation
 
-public struct Scale {
+public class Scale {
+    public class func intervals() -> [Interval] {
+        return []
+    }
+    
     public var tonic:PitchClass
-    public var intervals:[Interval]
+    
+    public init(tonic:PitchClass) {
+        self.tonic = tonic
+    }
     
     public func pitches(octave octave:Int) {
     }
@@ -18,4 +25,23 @@ public struct Scale {
     public func pitch(degree degree:Int) {
         
     }
+}
+
+public class DiatonicScale: Scale {
+}
+
+public class MajorScale: Scale {
+    
+    public override class func intervals() -> [Interval] {
+        return [
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+        ]
+    }
+    
 }

@@ -20,7 +20,7 @@ public struct Pitch {
     // MARK: -
 
     public var octave:Int {
-        return Int(floor(self.semitonesFromBase / Float(Interval.Octave.rawValue)))
+        return Int(floor(self.semitonesFromBase / Float(Interval.Octave.semitones)))
     }
 
     public var pitchClass:PitchClass {
@@ -30,11 +30,11 @@ public struct Pitch {
     // MARK: - Transpositions
     
     public func transposed(up interval: Interval) -> Pitch {
-        return self.transposed(by: Float(interval.rawValue))
+        return self.transposed(by: Float(interval.semitones))
     }
 
     public func transposed(down interval: Interval) -> Pitch {
-        return self.transposed(by: Float(-interval.rawValue))
+        return self.transposed(by: Float(-interval.semitones))
     }
     
     public func transposed(by semitones: Float) -> Pitch {
