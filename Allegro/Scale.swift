@@ -9,7 +9,7 @@
 import Foundation
 
 public class Scale {
-    public class func intervals() -> [Interval] {
+    public class var intervals: [Interval] {
         return []
     }
     
@@ -27,21 +27,56 @@ public class Scale {
     }
 }
 
+public class ChromaticScale: Scale {
+    public override class var intervals: [Interval] {
+        return [
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+            Interval.halfStep,
+        ]
+    }
+}
+
 public class DiatonicScale: Scale {
 }
 
-public class MajorScale: Scale {
-    
-    public override class func intervals() -> [Interval] {
+public class MajorScale: DiatonicScale {
+    public override class var intervals: [Interval] {
         return [
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+            Interval.halfStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+            Interval.halfStep,
         ]
     }
     
+    public var relativeMinorScale: NaturalMinorScale {
+        return NaturalMinorScale(tonic: self.tonic.transposed(down: Interval.minorThird))
+    }
+    
+}
+
+public class NaturalMinorScale: DiatonicScale {
+    public override class var intervals: [Interval] {
+        return [
+            Interval.wholeStep,
+            Interval.halfStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+            Interval.halfStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+        ]
+    }
 }

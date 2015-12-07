@@ -7,7 +7,7 @@
 //
 
 
-public struct Note: Sounded, Expression {
+public struct Note: Sounded, Expression, Transposable {
     public var pitch:Pitch
     public var duration:Duration
     
@@ -15,8 +15,8 @@ public struct Note: Sounded, Expression {
     
     var dotted:Note { return Note(pitch: self.pitch, duration: self.duration.dotted) }
 
-    public func transposed(up interval:Interval) -> Note {
-        return Note(pitch: self.pitch.transposed(up: interval), duration: self.duration)
+    public func transposed(by semitones:Double) -> Note {
+        return Note(pitch: self.pitch.transposed(by: semitones), duration: self.duration)
     }
     
     // MARK: - To other data types

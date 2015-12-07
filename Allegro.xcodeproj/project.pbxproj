@@ -27,6 +27,7 @@
 		22C8F5161C13552000B1952B /* PitchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5151C13552000B1952B /* PitchClass.swift */; settings = {ASSET_TAGS = (); }; };
 		22C8F5181C13622800B1952B /* experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5171C13622800B1952B /* experiments.swift */; settings = {ASSET_TAGS = (); }; };
 		22C8F51A1C13763F00B1952B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5191C13763F00B1952B /* Mode.swift */; settings = {ASSET_TAGS = (); }; };
+		22C8F51C1C1537D300B1952B /* Transposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F51B1C1537D300B1952B /* Transposable.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		22C8F5151C13552000B1952B /* PitchClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClass.swift; sourceTree = "<group>"; };
 		22C8F5171C13622800B1952B /* experiments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = experiments.swift; sourceTree = "<group>"; };
 		22C8F5191C13763F00B1952B /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		22C8F51B1C1537D300B1952B /* Transposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transposable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				22C8F5041C12A25500B1952B /* scales */,
 				22C8F5051C12A28200B1952B /* simple */,
 				22C8F5081C12A3AC00B1952B /* compound */,
+				22C8F51B1C1537D300B1952B /* Transposable.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				22C8F5121C13443C00B1952B /* Tuning.swift in Sources */,
 				22C8F4FC1C12A0A700B1952B /* Chord.swift in Sources */,
 				22C8F5071C12A2A700B1952B /* Rest.swift in Sources */,
+				22C8F51C1C1537D300B1952B /* Transposable.swift in Sources */,
 				22C8F4F61C1299E700B1952B /* Duration.swift in Sources */,
 				22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */,
 				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,

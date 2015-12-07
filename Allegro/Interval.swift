@@ -8,22 +8,33 @@
 
 import Foundation
 
-//public enum Interval: Int {
-//    case Unison             = 0
-//    case HalfStep           = 1
-//    case WholeStep          = 2
-//    case MinorThird         = 3
-//    case MajorThird         = 4
-//    case PerfectFourth      = 5
-//    case AugmentedFourth    = 6
-//    case PerfectFifth       = 7
-//    case AugmentedFifth     = 8
-//    case MajorSixth         = 9
-//    case MinorSeventh       = 10
-//    case MajorSeventh       = 11
-//    case Octave             = 12
-//}
-//
+public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
+    public var semitones: Double
+    public var quality: IntervalQuality?
+    
+    public init(floatLiteral value: FloatLiteralType) {
+        self.semitones = value
+    }
+
+    public init(integerLiteral value: IntegerLiteralType) {
+        self.semitones = Double(value)
+    }
+
+    static let unison: Interval             = 0
+    static let halfStep: Interval           = 1
+    static let wholeStep: Interval          = 2
+    static let minorThird: Interval         = 3
+    static let majorThird: Interval         = 4
+    static let perfectFourth: Interval      = 5
+    static let augmentedFourth: Interval    = 6
+    static let perfectFifth: Interval       = 7
+    static let augmentedFifth: Interval     = 8
+    static let majorSixth: Interval         = 9
+    static let minorSeventh: Interval       = 10
+    static let majorSeventh: Interval       = 11
+    static let octave: Interval             = 12
+}
+
 
 public enum ScaleDegree: Int {
     case Unison     = 1
@@ -42,64 +53,4 @@ public enum IntervalQuality {
     case Minor
     case Augmented
     case Diminished
-}
-
-public struct Interval {
-    public var quality: IntervalQuality
-    public var number: ScaleDegree
-    
-//    https://en.wikipedia.org/wiki/Lipps%E2%80%93Meyer_law
-//    public func lippsMeyer() -> Bool {
-//
-//    }
-    
-    public static let HalfStep = Interval(quality: .Minor, number: .Second)
-    public static let WholeStep = Interval(quality: .Major, number: .Second)
-    public static let Octave = Interval(quality: .Perfect, number: .Octave)
-    
-    public var semitones: Int {
-        switch (quality, number) {
-
-        case (.Perfect, .Unison):       return 0
-        case (.Diminished, .Second):    return 0
-            
-        case (.Augmented, .Unison):     return 1
-        case (.Minor, .Second):         return 1
-
-        case (.Major, .Second):         return 2
-        case (.Diminished, .Third):     return 2
-        
-        case (.Minor, .Third):          return 3
-        case (.Augmented, .Second):     return 3
-        
-        case (.Major, .Third):          return 4
-        case (.Diminished, .Fourth):    return 4
-        
-        case (.Perfect, .Fourth):       return 5
-        case (.Augmented, .Third):      return 5
-        
-        case (.Augmented, .Fourth):     return 6
-        case (.Diminished, .Fifth):     return 6
-        
-        case (.Perfect, .Fifth):        return 7
-        case (.Diminished, .Sixth):     return 7
-        
-        case (.Augmented, .Fifth):      return 8
-        case (.Minor, .Sixth):          return 8
-        
-        case (.Major, .Sixth):          return 9
-        case (.Diminished, .Seventh):   return 9
-
-        case (.Minor, .Seventh):        return 10
-        case (.Augmented, .Sixth):      return 10
-
-        case (.Major, .Seventh):        return 11
-        case (.Diminished, .Octave):    return 11
-
-        case (.Perfect, .Octave):       return 12
-        case (.Augmented, .Seventh):    return 12
-            
-        default:                return 0
-        }
-    }
 }

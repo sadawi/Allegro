@@ -14,30 +14,20 @@ Pitches represent absolute frequencies of notes; different octaves are different
 These are equal tempered pitches, defined as a number of semitones from an arbitrary base (say, C0).
 */
 
-public struct Pitch {
-    public var semitonesFromBase:Float = 0
+public struct Pitch: Transposable {
+    public var semitonesFromBase:Double = 0
     
     // MARK: -
 
     public var octave:Int {
-        return Int(floor(self.semitonesFromBase / Float(Interval.Octave.semitones)))
+        return Int(floor(self.semitonesFromBase / Double(Interval.octave.semitones)))
     }
 
     public var pitchClass:PitchClass {
         return PitchClass(semitones: Int(self.semitonesFromBase))
     }
     
-    // MARK: - Transpositions
-    
-    public func transposed(up interval: Interval) -> Pitch {
-        return self.transposed(by: Float(interval.semitones))
-    }
-
-    public func transposed(down interval: Interval) -> Pitch {
-        return self.transposed(by: Float(-interval.semitones))
-    }
-    
-    public func transposed(by semitones: Float) -> Pitch {
+    public func transposed(by semitones: Double) -> Pitch {
         return Pitch(semitonesFromBase: self.semitonesFromBase + semitones)
     }
     
