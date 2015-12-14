@@ -23,17 +23,17 @@ public postfix func ♭(pitchClass:PitchClass) -> PitchClass {
  The chroma of a pitch, regardless of octave.  C4 and C0 both have a pitchClass of C.
  */
 public struct PitchClass: Equatable, Transposable {
-    private var _semitones: Int = 0
+    private var _semitones: Double = 0
     
     /**
      Number of semitones above the base (defined as C), bounded in [0,12]
      */
-    public var semitones:Int {
+    public var semitones:Double {
         get { return _semitones }
-        set { _semitones = newValue % Int(Interval.octave.semitones) }
+        set { _semitones = fmod(newValue, Interval.octave.semitones) }
     }
     
-    public init(semitones: Int) {
+    public init(semitones: Double) {
         self.semitones = semitones
     }
     
@@ -47,8 +47,7 @@ public struct PitchClass: Equatable, Transposable {
     
     // TODO: keep track of spelling.  Interval transpositions should result in the correct new spelling.
     public func transposed(semitones semitones: Double) -> PitchClass {
-        // Hmm, maybe semitones should always just be a float?
-        return PitchClass(semitones: self.semitones + Int(semitones))
+        return PitchClass(semitones: self.semitones + semitones)
     }
     
     /**
