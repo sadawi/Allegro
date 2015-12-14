@@ -12,6 +12,10 @@ public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
     public var semitones: Double
     public var quality: IntervalQuality?
     
+    public init(semitones: Double) {
+        self.semitones = semitones
+    }
+    
     public init(floatLiteral value: FloatLiteralType) {
         self.semitones = value
     }
@@ -36,17 +40,17 @@ public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
 }
 
 
-public enum ScaleDegree: Int {
-    case Unison     = 1
-    case Second     = 2
-    case Third      = 3
-    case Fourth     = 4
-    case Fifth      = 5
-    case Sixth      = 6
-    case Seventh    = 7
-    case Octave     = 8
-}
-
+//public enum ScaleDegree: Int {
+//    case Unison     = 1
+//    case Second     = 2
+//    case Third      = 3
+//    case Fourth     = 4
+//    case Fifth      = 5
+//    case Sixth      = 6
+//    case Seventh    = 7
+//    case Octave     = 8
+//}
+//
 public enum IntervalQuality {
     case Perfect
     case Major

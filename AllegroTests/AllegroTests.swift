@@ -43,4 +43,20 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(B.flat[2].pitchClass, B.flat)
     }
     
+    func testScales() {
+        let scale = D.majorScale
+        let pitchClasses = scale.pitchClasses()
+        let desiredPitchClasses = [D, E, F♯, G, A, B, C♯]
+        XCTAssertEqual(pitchClasses, desiredPitchClasses)
+        
+        let pitches = scale.pitchesStartingWithPitch(D[4])
+        XCTAssertEqual(pitches[0], D[4])
+        
+        let octave4 = scale.pitchesStartingInOctave(4)
+        XCTAssertEqual(octave4[0], D[4])
+        
+        let triad = scale.triadFromPitch(D[4])
+        XCTAssertNotNil(triad)
+        XCTAssertEqual(triad!.pitches, [D[4], F.sharp[4], A[4]])
+    }
 }

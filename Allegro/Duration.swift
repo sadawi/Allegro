@@ -10,8 +10,8 @@ import Foundation
 
 public struct Duration: Equatable {
     /**
-    Arbitrary units representing the length in time.
-    */
+     Arbitrary units representing the length in time.
+     */
     public var length:Float
     
     public var dotted: Duration {
