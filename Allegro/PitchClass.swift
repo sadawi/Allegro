@@ -48,7 +48,7 @@ public struct PitchClass: Equatable, Transposable {
     public var halfSharp: PitchClass {
         return PitchClass(semitones: self.semitones+0.5)
     }
-
+    
     public var halfFlat: PitchClass {
         return PitchClass(semitones: self.semitones+11.5)
     }
@@ -79,9 +79,6 @@ public func ==(left:PitchClass, right:PitchClass) -> Bool {
 /**
 
 Public constants for the natural pitch classes.  Accidentals can be written as C.sharp, etc.
-
-I'm not totally sure making these global is a good idea, but it sure does make it more concise to write.
-C.sharp[4], and so on
 
 */
 
