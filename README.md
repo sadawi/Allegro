@@ -11,10 +11,31 @@ A concrete pitch in an octave is the `Pitch` struct, which can be subscripted fr
 ```swift
 A[4]
 C.sharp[3]
-A[4].transposed(up: Interval.majorThird)
+A[4].transposed(up: Interval.MajorThird)
 A[5].transposed(semitones: -3)
 ```
 
-## Notes and Chords
+A combination of pitches is called a `Chord`.
+
+```swift
+let triad = Chord(pitches: [ C[4], E[4], G[4] ])
+```
+
+## Durations, Notes, ChordedNotes
+
+The `Duration` struct describes durations with abstract length units.  There are constants and Unicode symbols for the base durations, and more can be created with the `dotted` and `triplet` methods.
+
+```swift
+Duration.Quarter == 𝅘𝅥
+```
+
+A pitch with a duration is called a `Note`.  A chord with a duration is called a `ChordedNote`.  The division operator can be used to create these -- divide by 4 to create a quarter note, etc.  These are all equivalent:
+
+```swift
+Note(pitch: C[4], duration: Duration.Quarter)
+C[4].note(Duration.Quarter)
+C[4].note(𝅘𝅥)
+C[4]/4
+```
 
 ## Scales
