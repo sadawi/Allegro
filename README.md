@@ -46,3 +46,15 @@ C[4]/4
 ```
 
 ## Scales
+
+A Scale is defined by a tonic `PitchClass` and an array of `Interval`s.  Here, subclasses define the intervals, and instances specify the tonic.
+
+Scales all provide a number of methods for interacting with pitches and chords.  You can get all pitch classes, get all pitches starting in an octave, find the scale degree of a pitch, and build triads from scale degrees.
+
+Concrete subclasses include:
+* `ChromaticScale`
+* `MajorScale`
+* `NaturalMinorScale`
+* `HarmonicMinorScale`
+
+
