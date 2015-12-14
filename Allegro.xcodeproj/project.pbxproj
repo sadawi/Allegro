@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22961F731C1F3E4900236085 /* Clef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22961F721C1F3E4900236085 /* Clef.swift */; };
 		22C8F4DD1C125E2800B1952B /* Allegro.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8F4DC1C125E2800B1952B /* Allegro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C8F4E41C125E2800B1952B /* Allegro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C8F4D91C125E2800B1952B /* Allegro.framework */; };
 		22C8F4E91C125E2800B1952B /* AllegroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4E81C125E2800B1952B /* AllegroTests.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22961F721C1F3E4900236085 /* Clef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clef.swift; sourceTree = "<group>"; };
 		22C8F4D91C125E2800B1952B /* Allegro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Allegro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C8F4DC1C125E2800B1952B /* Allegro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Allegro.h; sourceTree = "<group>"; };
 		22C8F4DE1C125E2800B1952B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */,
 				22E7BFA11C1F23F80014FC22 /* Tempo.swift */,
 				22E7BFA31C1F38F60014FC22 /* Loudness.swift */,
+				22961F721C1F3E4900236085 /* Clef.swift */,
 			);
 			name = parts;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				22C8F51C1C1537D300B1952B /* Transposable.swift in Sources */,
 				22C8F4F61C1299E700B1952B /* Duration.swift in Sources */,
 				22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */,
+				22961F731C1F3E4900236085 /* Clef.swift in Sources */,
 				22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */,
 				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,
 				22C8F5011C12A1B700B1952B /* protocols.swift in Sources */,
