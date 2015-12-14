@@ -8,6 +8,17 @@
 
 import Foundation
 
-public struct Rest: Expression {
+public struct Rest: Expression, Equatable {
     public var duration:Duration
 }
+
+public func ==(left:Rest, right:Rest) -> Bool {
+    return left.duration == right.duration
+}
+
+
+public let 𝄻 = Duration.Whole.rest
+public let 𝄼 = Duration.Half.rest
+public let 𝄽 = Duration.Quarter.rest
+public let 𝄾 = Duration.Eighth.rest
+public let 𝄿 = Duration.Sixteenth.rest

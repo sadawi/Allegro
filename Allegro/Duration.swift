@@ -30,6 +30,10 @@ public struct Duration: Equatable {
     public static let ThirtySecond              = Sixteenth / 2
     public static let SixtyFourth               = ThirtySecond / 2
     public static let OneHundredTwentyEighth    = SixtyFourth / 2
+    
+    public var rest: Rest {
+        return Rest(duration: self)
+    }
 }
 
 public func == (left:Duration, right:Duration) -> Bool {

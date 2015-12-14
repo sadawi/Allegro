@@ -66,11 +66,22 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(note.duration, 𝅘𝅥)
     }
     
+    func testRests() {
+        let note = D[4]/4
+        let rest = note.duration.rest
+        XCTAssertEqual(rest.duration, Duration.Quarter)
+        
+        XCTAssertEqual(𝄽, Duration.Quarter.rest)
+    }
+    
     func testExpressions() {
         let expression:SequenceExpression = [ D[4]/4, A[4]/16 ]
         let first = expression.expressions[0] as! Note
         XCTAssertEqual(first, D[4]/4)
         
         XCTAssertEqual(expression.duration, Duration.Quarter + Duration.Sixteenth)
+        
+        let parallel: ParallelExpression = [ C[4]/4, E[4]/4 ]
+        XCTAssertEqual(parallel.duration, Duration.Quarter)
     }
 }

@@ -140,6 +140,10 @@ public class DiatonicScale: Scale {
         return self.pitchClassForDegree(degree)
     }
     
+    public func triadsStartingInOctave(octave: Int) -> [Chord] {
+        return self.pitchesStartingInOctave(octave).map { self.triadFromPitch($0)! }
+    }
+    
 }
 
 public class MajorScale: DiatonicScale {

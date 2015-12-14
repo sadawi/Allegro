@@ -75,7 +75,7 @@ public func ==(left:PitchClass, right:PitchClass) -> Bool {
 Public constants for the natural pitch classes.  Accidentals can be written as C.sharp, etc.
 
 I'm not totally sure making these global is a good idea, but it sure does make it more concise to write.
-C.sharp[4].q, and so on
+C.sharp[4], and so on
 
 */
 
