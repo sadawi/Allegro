@@ -32,6 +32,7 @@ These are all equivalent:
 ```swift
 Duration.Quarter
 𝅘𝅥
+𝅘𝅥𝅮+𝅘𝅥𝅮
 Duration.Eighth * 2
 3 * 𝅘𝅥𝅮.triplet
 3 * 𝅘𝅥𝅮.tuplet(3)
