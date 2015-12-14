@@ -61,6 +61,8 @@ public struct PitchClass: Equatable, Transposable {
     /**
      Shortcut to create a pitch with an octave.
      Example: A[4]
+     
+     Note: for correct parsing, postfix operators need a space after them before subscripting: A♯ [4] instead of A♯[4]
      */
     public subscript(octave:Int) -> Pitch {
         return self.pitch(octave)

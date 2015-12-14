@@ -34,14 +34,14 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(D.flat, C.sharp)
         
         let pitch:Pitch = C.sharp.pitch(0)
-        let pitch2:Pitch = C.sharp[0]
+        let pitch2:Pitch = C♯ [0]
         XCTAssertEqual(pitch.semitonesFromBase, 1)
         XCTAssertEqual(pitch2.semitonesFromBase, 1)
 
         let note = C.sharp.pitch(0).note(Duration.Quarter)
         XCTAssertEqual(note.duration, Duration.Quarter)
         
-        let note2:Note = C.sharp[0]/4
+        let note2:Note = C♯ [0]/4
         XCTAssertEqual(note2.duration, Duration.Quarter)
     }
     
