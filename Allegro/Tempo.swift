@@ -12,6 +12,11 @@ public struct Tempo {
     public var referenceDuration:Duration
     public var perMinute:Int
     
+    public init(_ perMinute:Int, _ duration:Duration = Duration.Quarter) {
+        self.referenceDuration = duration
+        self.perMinute = perMinute
+    }
+    
     public func timeIntervalForDuration(duration:Duration) -> NSTimeInterval {
         return duration.length / referenceDuration.length / Double(self.perMinute) * 60
     }

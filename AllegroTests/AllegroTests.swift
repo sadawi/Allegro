@@ -92,10 +92,13 @@ class AllegroTests: XCTestCase {
     }
     
     func testTempo() {
-        let slow = Tempo(referenceDuration: 𝅘𝅥, perMinute: 60)
+        let defaultTempo = Tempo(60)
+        XCTAssertEqual(defaultTempo.timeIntervalForDuration(𝅘𝅥), 1.0)
+        
+        let slow = Tempo(60, 𝅘𝅥)
         XCTAssertEqual(slow.timeIntervalForDuration(𝅘𝅥), 1.0)
 
-        let fast = Tempo(referenceDuration: 𝅘𝅥, perMinute: 120)
+        let fast = Tempo(120, 𝅘𝅥)
         XCTAssertEqual(fast.timeIntervalForDuration(𝅘𝅥), 0.5)
     }
 }
