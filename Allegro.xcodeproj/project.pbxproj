@@ -35,6 +35,7 @@
 		22E7BF9D1C1EA1580014FC22 /* InstrumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */; };
 		22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */; };
 		22E7BFA21C1F23F80014FC22 /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BFA11C1F23F80014FC22 /* Tempo.swift */; };
+		22E7BFA41C1F38F60014FC22 /* Loudness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BFA31C1F38F60014FC22 /* Loudness.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentError.swift; sourceTree = "<group>"; };
 		22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSignature.swift; sourceTree = "<group>"; };
 		22E7BFA11C1F23F80014FC22 /* Tempo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tempo.swift; sourceTree = "<group>"; };
+		22E7BFA31C1F38F60014FC22 /* Loudness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loudness.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			children = (
 				22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */,
 				22E7BFA11C1F23F80014FC22 /* Tempo.swift */,
+				22E7BFA31C1F38F60014FC22 /* Loudness.swift */,
 			);
 			name = parts;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				22E7BF9B1C1E9AFB0014FC22 /* MIDI.swift in Sources */,
 				22C8F5181C13622800B1952B /* experiments.swift in Sources */,
+				22E7BFA41C1F38F60014FC22 /* Loudness.swift in Sources */,
 				22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */,
 				22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */,
 				22E7BFA21C1F23F80014FC22 /* Tempo.swift in Sources */,
