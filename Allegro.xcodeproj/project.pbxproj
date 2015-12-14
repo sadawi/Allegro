@@ -33,6 +33,8 @@
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
 		22E7BF9B1C1E9AFB0014FC22 /* MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */; };
 		22E7BF9D1C1EA1580014FC22 /* InstrumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */; };
+		22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */; };
+		22E7BFA21C1F23F80014FC22 /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BFA11C1F23F80014FC22 /* Tempo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDI.swift; sourceTree = "<group>"; };
 		22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentError.swift; sourceTree = "<group>"; };
+		22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSignature.swift; sourceTree = "<group>"; };
+		22E7BFA11C1F23F80014FC22 /* Tempo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tempo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		22C8F5021C12A1C600B1952B /* models */ = {
 			isa = PBXGroup;
 			children = (
+				22E7BF9E1C1F1D780014FC22 /* parts */,
 				22C8F5031C12A23A00B1952B /* basic */,
 				22C8F5041C12A25500B1952B /* scales */,
 				22C8F5051C12A28200B1952B /* simple */,
@@ -209,6 +214,15 @@
 				22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */,
 			);
 			name = players;
+			sourceTree = "<group>";
+		};
+		22E7BF9E1C1F1D780014FC22 /* parts */ = {
+			isa = PBXGroup;
+			children = (
+				22E7BF9F1C1F1D850014FC22 /* TimeSignature.swift */,
+				22E7BFA11C1F23F80014FC22 /* Tempo.swift */,
+			);
+			name = parts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +337,7 @@
 				22C8F5181C13622800B1952B /* experiments.swift in Sources */,
 				22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */,
 				22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */,
+				22E7BFA21C1F23F80014FC22 /* Tempo.swift in Sources */,
 				22C8F5161C13552000B1952B /* PitchClass.swift in Sources */,
 				22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */,
 				22E7BF9D1C1EA1580014FC22 /* InstrumentError.swift in Sources */,
@@ -342,6 +357,7 @@
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
 				22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */,
 				22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */,
+				22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

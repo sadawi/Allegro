@@ -1,5 +1,5 @@
 //
-//  Instrument.swift
+//  Tempo.swift
 //  Allegro
 //
 //  Created by Sam Williams on 12/14/15.
@@ -8,18 +8,12 @@
 
 import Foundation
 
-public class Instrument {
-    public var tempo:Int = 100
+public struct Tempo {
+    public var referenceDuration:Duration
+    public var perMinute:Int
     
     public func timeIntervalForDuration(duration:Duration) -> NSTimeInterval {
-        return 0.5
+        return duration.length / referenceDuration.length / Double(self.perMinute) * 60
     }
     
-    func startPlayingPitch(pitch:Pitch) {
-        
-    }
-    
-    func stopPlayingPitch(pitch:Pitch) {
-        
-    }
 }

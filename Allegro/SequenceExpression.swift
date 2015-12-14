@@ -20,7 +20,7 @@ public class SequenceExpression: CompoundExpression, ArrayLiteralConvertible {
     }
 
     public override var duration: Duration {
-        var result:Float = 0.0
+        var result:Double = 0.0
         for expression in self.expressions {
             result += expression.duration.length
         }

@@ -50,7 +50,7 @@ public struct Pitch: Transposable, Equatable {
  Now you can write A.flat[4]/16, etc.
  */
 public func /(pitch:Pitch, divisor:Int) -> Note {
-    return pitch.note(Duration(length: 1/Float(divisor)))
+    return pitch.note(Duration(length: 1/Double(divisor)))
 }
 
 

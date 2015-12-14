@@ -21,6 +21,12 @@ class AllegroTests: XCTestCase {
         super.tearDown()
     }
     
+    func testDurations() {
+        XCTAssertEqual(𝅘𝅥.length, 2*𝅘𝅥𝅮.length)
+        XCTAssertEqual(𝅗𝅥.dotted.length, 3*𝅘𝅥.length)
+        XCTAssertEqual(3 * 𝅘𝅥.triplet.length, 𝅗𝅥.length)
+    }
+    
     func testPitches() {
         XCTAssertEqual(C♯, C.sharp)
         XCTAssertEqual(C♭, B)
@@ -83,5 +89,13 @@ class AllegroTests: XCTestCase {
         
         let parallel: ParallelExpression = [ C[4]/4, E[4]/4 ]
         XCTAssertEqual(parallel.duration, Duration.Quarter)
+    }
+    
+    func testTempo() {
+        let slow = Tempo(referenceDuration: 𝅘𝅥, perMinute: 60)
+        XCTAssertEqual(slow.timeIntervalForDuration(𝅘𝅥), 1.0)
+
+        let fast = Tempo(referenceDuration: 𝅘𝅥, perMinute: 120)
+        XCTAssertEqual(fast.timeIntervalForDuration(𝅘𝅥), 0.5)
     }
 }

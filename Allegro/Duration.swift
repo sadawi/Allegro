@@ -12,7 +12,7 @@ public struct Duration: Equatable {
     /**
      Arbitrary units representing the length in time.
      */
-    public var length:Float
+    public var length:Double
     
     public var dotted: Duration {
         return self * 1.5
@@ -40,27 +40,27 @@ public func == (left:Duration, right:Duration) -> Bool {
     return left.length == right.length
 }
 
-public func / (duration:Duration, number:Float) -> Duration {
+public func / (duration:Duration, number:Double) -> Duration {
     return Duration(length: duration.length / number)
 }
 
 public func / (duration:Duration, number:Int) -> Duration {
-    return Duration(length: duration.length / Float(number))
+    return Duration(length: duration.length / Double(number))
 }
 
-public func * (duration:Duration, number:Float) -> Duration {
+public func * (duration:Duration, number:Double) -> Duration {
     return Duration(length: duration.length * number)
 }
 
-public func * (number:Float, duration:Duration) -> Duration {
+public func * (number:Double, duration:Duration) -> Duration {
     return Duration(length: duration.length * number)
 }
 
-public func + (duration:Duration, number:Float) -> Duration {
+public func + (duration:Duration, number:Double) -> Duration {
     return Duration(length: duration.length + number)
 }
 
-public func + (number:Float, duration:Duration) -> Duration {
+public func + (number:Double, duration:Duration) -> Duration {
     return Duration(length: duration.length + number)
 }
 

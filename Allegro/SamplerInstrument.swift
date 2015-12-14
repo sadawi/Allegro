@@ -22,7 +22,7 @@ public class SamplerInstrument: Instrument {
         self.patchNumber = patchNumber
     }
     
-    public func playNoteWithMIDINumber(number:Int, duration:NSTimeInterval) {
+    public func playNote(MIDINumber number:Int, duration:NSTimeInterval) {
         
     }
     
@@ -35,7 +35,7 @@ public class SamplerInstrument: Instrument {
     }
     
     public func playNote(note:Note, then:(Void -> Void)) {
-        self.playNoteWithMIDINumber(note.pitch.MIDINumber, duration: self.timeIntervalForDuration(note.duration))
+        self.playNote(MIDINumber: note.pitch.MIDINumber, duration: self.timeIntervalForDuration(note.duration))
     }
     
     private func setup() throws {
