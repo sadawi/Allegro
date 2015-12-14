@@ -115,6 +115,13 @@ public enum DiatonicScaleDegree: Int {
 
 public class DiatonicScale: Scale {
     
+    public var supertonic:  PitchClass { return self[DiatonicScaleDegree.Supertonic] }
+    public var mediant:     PitchClass { return self[DiatonicScaleDegree.Mediant] }
+    public var subdominant: PitchClass { return self[DiatonicScaleDegree.Subdominant] }
+    public var dominant:    PitchClass { return self[DiatonicScaleDegree.Dominant] }
+    public var submediant:  PitchClass { return self[DiatonicScaleDegree.Submediant] }
+    public var leadingTone: PitchClass { return self[DiatonicScaleDegree.LeadingTone] }
+    
     public func degreeOfPitch(pitch: Pitch) -> DiatonicScaleDegree? {
         if let index = self.indexOfPitchClass(pitch.pitchClass) {
             return DiatonicScaleDegree(rawValue: index+1)
@@ -133,7 +140,7 @@ public class DiatonicScale: Scale {
     }
     
     public func pitchClassForDegree(degree:DiatonicScaleDegree) -> PitchClass {
-        return self.pitchClassForDegree(degree.rawValue)
+        return self.pitchClassForDegree(degree.rawValue - 1)
     }
     
     public subscript(degree:DiatonicScaleDegree) -> PitchClass {
@@ -179,6 +186,20 @@ public class NaturalMinorScale: DiatonicScale {
             Interval.halfStep,
             Interval.wholeStep,
             Interval.wholeStep,
+        ]
+    }
+}
+
+public class HarmonicMinorScale: DiatonicScale {
+    public override class var intervals: [Interval] {
+        return [
+            Interval.wholeStep,
+            Interval.halfStep,
+            Interval.wholeStep,
+            Interval.wholeStep,
+            Interval.halfStep,
+            Interval.augmentedSecond,
+            Interval.halfStep,
         ]
     }
 }

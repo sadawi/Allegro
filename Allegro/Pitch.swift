@@ -27,7 +27,7 @@ public struct Pitch: Transposable, Equatable {
         return PitchClass(semitones: Int(self.semitonesFromBase))
     }
     
-    public func transposed(by semitones: Double) -> Pitch {
+    public func transposed(semitones semitones: Double) -> Pitch {
         return Pitch(semitonesFromBase: self.semitonesFromBase + semitones)
     }
     

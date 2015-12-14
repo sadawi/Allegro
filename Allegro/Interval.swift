@@ -27,6 +27,7 @@ public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
     static let unison: Interval             = 0
     static let halfStep: Interval           = 1
     static let wholeStep: Interval          = 2
+    static let augmentedSecond: Interval    = 3
     static let minorThird: Interval         = 3
     static let majorThird: Interval         = 4
     static let perfectFourth: Interval      = 5

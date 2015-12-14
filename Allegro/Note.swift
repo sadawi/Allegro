@@ -15,8 +15,8 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
     
     var dotted:Note { return Note(pitch: self.pitch, duration: self.duration.dotted) }
 
-    public func transposed(by semitones:Double) -> Note {
-        return Note(pitch: self.pitch.transposed(by: semitones), duration: self.duration)
+    public func transposed(semitones semitones:Double) -> Note {
+        return Note(pitch: self.pitch.transposed(semitones: semitones), duration: self.duration)
     }
     
     // MARK: - To other data types
