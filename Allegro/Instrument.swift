@@ -9,11 +9,7 @@
 import Foundation
 
 public class Instrument {
-    public var tempo:Int = 100
-    
-    public func timeIntervalForDuration(duration:Duration) -> NSTimeInterval {
-        return 0.5
-    }
+    public var tempo:Tempo = Tempo(100)
     
     func startPlayingPitch(pitch:Pitch) {
         

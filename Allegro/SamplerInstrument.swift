@@ -35,7 +35,7 @@ public class SamplerInstrument: Instrument {
     }
     
     public func playNote(note:Note, then:(Void -> Void)) {
-        self.playNote(MIDINumber: note.pitch.MIDINumber, duration: self.timeIntervalForDuration(note.duration))
+        self.playNote(MIDINumber: note.pitch.MIDINumber, duration: self.tempo.timeIntervalForDuration(note.duration))
     }
     
     private func setup() throws {
