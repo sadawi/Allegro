@@ -45,6 +45,14 @@ public struct PitchClass: Equatable, Transposable {
         return PitchClass(semitones: self.semitones+11)
     }
     
+    public var halfSharp: PitchClass {
+        return PitchClass(semitones: self.semitones+0.5)
+    }
+
+    public var halfFlat: PitchClass {
+        return PitchClass(semitones: self.semitones+11.5)
+    }
+    
     // TODO: keep track of spelling.  Interval transpositions should result in the correct new spelling.
     public func transposed(semitones semitones: Double) -> PitchClass {
         return PitchClass(semitones: self.semitones + semitones)
