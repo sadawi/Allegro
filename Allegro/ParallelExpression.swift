@@ -8,10 +8,14 @@
 
 import Foundation
 
-public class ParallelExpression: CompoundExpression {
-    public var expressions:[Expression] = []
+public class ParallelExpression: CompoundExpression, ArrayLiteralConvertible {
     
-    public var duration: Duration {
+    // "Synthesizing a variadic inherited initializer for subclass is unsupported"
+    public required init(arrayLiteral expressions: Expression...) {
+        super.init(expressions: expressions)
+    }
+    
+    public override var duration: Duration {
         var result:Float = 0.0
         for expression in self.expressions {
             result = max(result, expression.duration.length)

@@ -59,4 +59,18 @@ class AllegroTests: XCTestCase {
         XCTAssertNotNil(triad)
         XCTAssertEqual(triad!.pitches, [D[4], F.sharp[4], A[4]])
     }
+    
+    func testNotes() {
+        let note = D[4]/4
+        XCTAssertEqual(note.duration, Duration.Quarter)
+        XCTAssertEqual(note.duration, 𝅘𝅥)
+    }
+    
+    func testExpressions() {
+        let expression:SequenceExpression = [ D[4]/4, A[4]/16 ]
+        let first = expression.expressions[0] as! Note
+        XCTAssertEqual(first, D[4]/4)
+        
+        XCTAssertEqual(expression.duration, Duration.Quarter + Duration.Sixteenth)
+    }
 }

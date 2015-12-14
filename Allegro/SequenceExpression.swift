@@ -8,14 +8,18 @@
 
 import Foundation
 
-public class SequenceExpression: CompoundExpression {
-    public var expressions:[Expression] = []
+public class SequenceExpression: CompoundExpression, ArrayLiteralConvertible {
     
-    public init(expressions:[Expression]=[]) {
-        self.expressions = expressions
+    // "Synthesizing a variadic inherited initializer for subclass is unsupported"
+    public required init(arrayLiteral expressions: Expression...) {
+        super.init(expressions: expressions)
     }
     
-    public var duration: Duration {
+    public override init(expressions: [Expression]) {
+        super.init(expressions: expressions)
+    }
+
+    public override var duration: Duration {
         var result:Float = 0.0
         for expression in self.expressions {
             result += expression.duration.length

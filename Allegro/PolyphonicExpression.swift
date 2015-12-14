@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class PolyphonicExpression: CompoundExpression {
-    public var expressions:[Expression] = []
-    
-    public var duration: Duration {
-        // TODO
-        return 𝅘𝅥
-    }
-
-}
+//public class PolyphonicExpression: CompoundExpression {
+//    public var expressions:[Expression] = []
+//    
+//    public var duration: Duration {
+//        // TODO
+//        return 𝅘𝅥
+//    }
+//
+//}

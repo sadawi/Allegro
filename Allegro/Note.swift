@@ -7,7 +7,7 @@
 //
 
 
-public struct Note: Sounded, Expression, Transposable {
+public struct Note: Sounded, Expression, Transposable, Equatable {
     public var pitch:Pitch
     public var duration:Duration
     
@@ -30,4 +30,8 @@ public struct Note: Sounded, Expression, Transposable {
         return result
     }
     
+}
+
+public func ==(left:Note, right:Note) -> Bool {
+    return left.pitch == right.pitch && left.duration == right.duration
 }

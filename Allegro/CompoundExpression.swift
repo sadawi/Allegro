@@ -8,6 +8,19 @@
 
 import Foundation
 
-public protocol CompoundExpression: Expression {
-    var expressions:[Expression] { get }
+public class CompoundExpression: Expression {
+    var expressions:[Expression] = []
+
+    public init() {
+    }
+    
+    public init(expressions:[Expression]) {
+        self.expressions = expressions
+    }
+    
+    public var duration: Duration {
+        // Subclasses should implement
+        return Duration(length: 0)
+    }
+
 }

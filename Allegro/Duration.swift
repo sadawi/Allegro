@@ -60,6 +60,10 @@ public func + (number:Float, duration:Duration) -> Duration {
     return Duration(length: duration.length + number)
 }
 
+public func + (durationOne:Duration, durationTwo:Duration) -> Duration {
+    return Duration(length: durationOne.length + durationTwo.length)
+}
+
 public let 𝅝 = Duration.Whole
 public let 𝅗𝅥 = Duration.Half
 public let 𝅘𝅥 = Duration.Quarter
