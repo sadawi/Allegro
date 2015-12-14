@@ -25,7 +25,7 @@ let triad = Chord(pitches: [ C[4], E[4], G[4] ])
 
 ## Durations, Notes, ChordedNotes
 
-The `Duration` struct describes durations with abstract length units.  There are constants and Unicode symbols for the base durations, and more can be created with the `dotted` and `triplet` methods.  Arithmetic operators work on durations, too.  
+The `Duration` struct describes durations with abstract length units.  There are constants and Unicode symbols for the base durations, and more can be created with the `dotted`, `triplet`, and `tuplet` methods.  Arithmetic operators work on durations, too.  
 
 These are all equivalent:
 
@@ -34,6 +34,7 @@ Duration.Quarter
 𝅘𝅥
 Duration.Eighth * 2
 3 * 𝅘𝅥𝅮.triplet
+3 * 𝅘𝅥𝅮.tuplet(3)
 ```
 
 A pitch with a duration is called a `Note`.  A chord with a duration is called a `ChordedNote`.  The division operator can be used to create these -- divide by 4 to create a quarter note, etc.  These are all equivalent:
