@@ -12,7 +12,10 @@ public struct TimeSignature {
     public var beatsPerBar:Int?
     public var beatDuration:Duration
     
-    public static let commonTime = TimeSignature(beatsPerBar: 4, beatDuration: 𝅘𝅥)
-    public static let cutTime = TimeSignature(beatsPerBar: 2, beatDuration: 𝅗𝅥)
-    public static let threeFour = TimeSignature(beatsPerBar: 3, beatDuration: 𝅘𝅥)
+    public static let CommonTime = TimeSignature(beatsPerBar: 4, beatDuration: 𝅘𝅥)
+    public static let CutTime = TimeSignature(beatsPerBar: 2, beatDuration: 𝅗𝅥)
+    public static let ThreeFour = TimeSignature(beatsPerBar: 3, beatDuration: 𝅘𝅥)
 }
+
+public let 𝄴 = TimeSignature.CommonTime
+public let 𝄵 = TimeSignature.CutTime
