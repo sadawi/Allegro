@@ -19,7 +19,15 @@ public struct Duration: Equatable {
     }
     
     public var triplet: Duration {
-        return self * 2.0 / 3.0
+        return self.tuplet(3)!
+    }
+    
+    public func tuplet(number:Int) -> Duration? {
+        if number > 1 {
+            return self * Double(number-1) / Double(number)
+        } else {
+            return nil
+        }
     }
     
     public static let Whole                     = Duration(length: 1)

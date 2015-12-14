@@ -22,9 +22,12 @@ class AllegroTests: XCTestCase {
     }
     
     func testDurations() {
-        XCTAssertEqual(𝅘𝅥.length, 2*𝅘𝅥𝅮.length)
-        XCTAssertEqual(𝅗𝅥.dotted.length, 3*𝅘𝅥.length)
-        XCTAssertEqual(3 * 𝅘𝅥.triplet.length, 𝅗𝅥.length)
+        XCTAssertEqual(𝅘𝅥, 2*𝅘𝅥𝅮)
+        XCTAssertEqual(𝅗𝅥.dotted, 3*𝅘𝅥)
+        XCTAssertEqual(3 * 𝅘𝅥.triplet, 𝅗𝅥)
+        XCTAssertEqual(3 * 𝅘𝅥𝅮.triplet, 𝅘𝅥)
+        XCTAssertEqual(𝅘𝅥.tuplet(3), 𝅘𝅥.triplet)
+        XCTAssertEqual(5*𝅘𝅥.tuplet(5)!, 4*𝅘𝅥)
     }
     
     func testPitches() {
