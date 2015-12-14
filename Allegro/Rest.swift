@@ -22,3 +22,6 @@ public let 𝄼 = Duration.Half.rest
 public let 𝄽 = Duration.Quarter.rest
 public let 𝄾 = Duration.Eighth.rest
 public let 𝄿 = Duration.Sixteenth.rest
+public let 𝅀 = Duration.ThirtySecond.rest
+public let 𝅁 = Duration.SixtyFourth.rest
+public let 𝅂 = Duration.OneHundredTwentyEighth.rest

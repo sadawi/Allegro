@@ -74,4 +74,5 @@ public let 𝅘𝅥 = Duration.Quarter
 public let 𝅘𝅥𝅮 = Duration.Eighth
 public let 𝅘𝅥𝅯 = Duration.Sixteenth
 public let 𝅘𝅥𝅰 = Duration.ThirtySecond
-public let 𝅘𝅥𝅱 = Duration.ThirtySecond
+public let 𝅘𝅥𝅱 = Duration.SixtyFourth
+public let 𝅘𝅥𝅲 = Duration.OneHundredTwentyEighth
