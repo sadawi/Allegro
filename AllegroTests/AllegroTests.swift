@@ -22,6 +22,7 @@ class AllegroTests: XCTestCase {
     }
     
     func testDurations() {
+        XCTAssertEqual(𝅘𝅥𝅮, Duration.Eighth)
         XCTAssertEqual(𝅘𝅥, 2*𝅘𝅥𝅮)
         XCTAssertEqual(𝅗𝅥.dotted, 3*𝅘𝅥)
         XCTAssertEqual(3 * 𝅘𝅥.triplet, 𝅗𝅥)
