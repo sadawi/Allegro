@@ -40,6 +40,10 @@ public struct Pitch: Transposable, Equatable {
         return Note(pitch:self, duration:duration)
     }
     
+    public func semitonesTo(pitch:Pitch) -> Double {
+        return pitch.semitonesFromBase - self.semitonesFromBase
+    }
+    
 }
 
 /**
