@@ -17,26 +17,30 @@ public class SamplerInstrument: Instrument {
     private let sampler = AVAudioUnitSampler()
     private let engine = AVAudioEngine()
     
-    public init(filename:String, patchNumber:UInt8) {
+    public init?(filename:String, patchNumber:UInt8) {
         self.filename = filename
         self.patchNumber = patchNumber
-    }
-    
-    public func playNote(MIDINumber number:Int, duration:NSTimeInterval) {
         
-    }
-    
-    public override func startPlayingPitch(pitch: Pitch) {
+        super.init()
         
+        do {
+            try self.setup()
+        } catch {
+            return nil
+        }
+    }
+
+    // MARK: - Overrides
+    
+    override func startPlayingPitch(pitch:Pitch, loudness:Loudness) {
+        self.sampler.startNote(pitch.MIDINumber, withVelocity: loudness.MIDIVelocity, onChannel: 0)
     }
     
-    public override func stopPlayingPitch(pitch: Pitch) {
-        
+    override func stopPlayingPitch(pitch:Pitch) {
+        self.sampler.stopNote(pitch.MIDINumber, onChannel: 0)
     }
     
-    public func playNote(note:Note, then:(Void -> Void)) {
-        self.playNote(MIDINumber: note.pitch.MIDINumber, duration: self.tempo.timeIntervalForDuration(note.duration))
-    }
+    // MARK: - MIDI
     
     private func setup() throws {
         self.engine.attachNode(self.sampler)

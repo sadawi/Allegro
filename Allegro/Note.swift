@@ -10,6 +10,12 @@
 public struct Note: Sounded, Expression, Transposable, Equatable {
     public var pitch:Pitch
     public var duration:Duration
+    public var loudness:Loudness = 𝆐𝆑
+    
+    init(pitch:Pitch, duration:Duration) {
+        self.pitch = pitch
+        self.duration = duration
+    }
     
     // MARK: - Transformation shortcuts
     

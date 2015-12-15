@@ -14,4 +14,5 @@ public protocol Expression {
 
 public protocol Sounded {
     var pitch:Pitch { get }
+    var loudness: Loudness { get }
 }

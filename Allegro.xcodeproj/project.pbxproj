@@ -29,6 +29,8 @@
 		22C8F5181C13622800B1952B /* experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5171C13622800B1952B /* experiments.swift */; };
 		22C8F51A1C13763F00B1952B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5191C13763F00B1952B /* Mode.swift */; };
 		22C8F51C1C1537D300B1952B /* Transposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F51B1C1537D300B1952B /* Transposable.swift */; };
+		22D7C2751C206ACF0044D133 /* AJH_Piano.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2741C206ACE0044D133 /* AJH_Piano.sf2 */; };
+		22D7C2771C2070950044D133 /* delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2761C2070950044D133 /* delay.swift */; };
 		22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF931C1E944B0014FC22 /* NotationView.swift */; };
 		22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */; };
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
@@ -75,6 +77,8 @@
 		22C8F5171C13622800B1952B /* experiments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = experiments.swift; sourceTree = "<group>"; };
 		22C8F5191C13763F00B1952B /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		22C8F51B1C1537D300B1952B /* Transposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transposable.swift; sourceTree = "<group>"; };
+		22D7C2741C206ACE0044D133 /* AJH_Piano.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AJH_Piano.sf2; sourceTree = "<group>"; };
+		22D7C2761C2070950044D133 /* delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delay.swift; sourceTree = "<group>"; };
 		22E7BF931C1E944B0014FC22 /* NotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationView.swift; sourceTree = "<group>"; };
 		22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplerInstrument.swift; sourceTree = "<group>"; };
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -125,12 +129,14 @@
 		22C8F4DB1C125E2800B1952B /* Allegro */ = {
 			isa = PBXGroup;
 			children = (
+				22D7C2731C206AC40044D133 /* resources */,
 				22E7BF951C1E992E0014FC22 /* players */,
 				22C8F4DE1C125E2800B1952B /* Info.plist */,
 				22C8F4DC1C125E2800B1952B /* Allegro.h */,
 				22C8F5021C12A1C600B1952B /* models */,
 				22E7BF921C1E94260014FC22 /* views */,
 				22C8F5171C13622800B1952B /* experiments.swift */,
+				22D7C2761C2070950044D133 /* delay.swift */,
 			);
 			path = Allegro;
 			sourceTree = "<group>";
@@ -199,6 +205,14 @@
 				22C8F5131C13512300B1952B /* PolyphonicExpression.swift */,
 			);
 			name = compound;
+			sourceTree = "<group>";
+		};
+		22D7C2731C206AC40044D133 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				22D7C2741C206ACE0044D133 /* AJH_Piano.sf2 */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		22E7BF921C1E94260014FC22 /* views */ = {
@@ -322,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D7C2751C206ACF0044D133 /* AJH_Piano.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +375,7 @@
 				22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */,
 				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,
 				22C8F5011C12A1B700B1952B /* protocols.swift in Sources */,
+				22D7C2771C2070950044D133 /* delay.swift in Sources */,
 				22C8F51A1C13763F00B1952B /* Mode.swift in Sources */,
 				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
