@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0) {
-            let music = SequenceExpression(expressions: C.majorScale.pitchesStartingInOctave(4).map { $0/8 })
-            music.perform(on: piano, completion: nil)
+            let melody = SequenceExpression(C.naturalMinorScale.pitchesStartingInOctave(4).map { $0/4 })
+            let chords = SequenceExpression([C.naturalMinorScale.triadFromDegree(.Tonic, octave: 3) / 1])
+            
+            (melody|chords).perform(on: piano, completion: nil)
         }
     }
 

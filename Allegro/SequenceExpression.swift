@@ -22,7 +22,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
     var tail:SequenceExpression? {
         if self.expressions.count > 1 {
             let a = self.expressions
-            return SequenceExpression(expressions: Array(a[1..<a.count]))
+            return SequenceExpression(Array(a[1..<a.count]))
         } else {
             return nil
         }
@@ -32,7 +32,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
         self.expressions = expressions
     }
     
-    public init(expressions: [Expression]) {
+    public init(_ expressions: [Expression]) {
         self.expressions = expressions
     }
 
@@ -61,5 +61,4 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
             completion?()
         }
     }
-
 }

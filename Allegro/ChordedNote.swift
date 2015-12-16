@@ -23,7 +23,7 @@ public struct ChordedNote: Expression {
     
     public var arpeggio: SequenceExpression {
         let notes:[Expression] = chord.pitches.map { Note(pitch: $0, duration: duration / chord.pitches.count) }
-        return SequenceExpression(expressions:notes)
+        return SequenceExpression(notes)
     }
 
     public func perform(on performer: Performer, completion: (Void -> Void)?) {

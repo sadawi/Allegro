@@ -15,6 +15,10 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         self.expressions = expressions
     }
     
+    public init(_ expressions:[Expression]) {
+        self.expressions = expressions
+    }
+    
     public var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
@@ -30,4 +34,8 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         performer.perform(duration: self.duration, completion: completion)
     }
 
+}
+
+public func |(left:Expression, right:Expression) -> ParallelExpression {
+    return ParallelExpression([left, right])
 }

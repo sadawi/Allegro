@@ -130,6 +130,11 @@ public class DiatonicScale: Scale {
         }
     }
     
+    public func triadFromDegree(degree: DiatonicScaleDegree, octave:Int) -> Chord {
+        let pitch = self.pitchClassForDegree(degree)[octave]
+        return self.triadFromPitch(pitch)!
+    }
+    
     public func triadFromPitch(pitch: Pitch) -> Chord? {
         let pitches = self.pitchesStartingWithPitch(pitch)
         if pitches.count >= 5 {
