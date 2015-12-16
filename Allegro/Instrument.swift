@@ -16,6 +16,7 @@ public enum InstrumentState {
 
 public protocol Performer {
     func stop()
+    func play(expression: Expression)
     func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?)
     func perform(duration duration:Duration, completion:(Void -> Void)?)
 }
@@ -24,15 +25,15 @@ public class Instrument: Performer {
     public var state:InstrumentState = .Stopped
     public var tempo:Tempo = Tempo(100)
 
-//    public func perform(expression:Expression, completion: (Void -> Void)) {
-//        expression.each { subexpression, next in
-//            self.play(subexpression, next: next)
-//        }
-//    }
-//    
-    
     public func stop() {
         self.state = .Stopped
+    }
+    
+    public func play(expression: Expression) {
+        // TODO: a stop that actually works here, when I redo the timing system.
+        self.stop()
+        self.state = .Playing
+        expression.perform(on: self, completion: nil)
     }
     
     public func perform(duration duration:Duration, completion:(Void -> Void)?) {
@@ -40,10 +41,13 @@ public class Instrument: Performer {
     }
     
     public func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?) {
-        self.state = .Playing
+        guard self.state != .Stopped else { return }
+        
         let interval = self.tempo.timeIntervalForDuration(duration)
         if let pitch = pitch, loudness = loudness {
             self.startPlayingPitch(pitch, loudness: loudness)
+            
+            // TODO: a more accurate, cancelable timer
             delay(interval) {
                 self.stopPlayingPitch(pitch)
                 if self.state == .Playing {

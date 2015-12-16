@@ -18,8 +18,7 @@ class ViewController: DataSourceViewController {
     }
     
     func play(expression:Expression) {
-        self.piano.stop()
-        expression.perform(on: self.piano, completion: nil)
+        self.piano.play(expression)
     }
     
     @IBAction func stop() {

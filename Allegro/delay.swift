@@ -8,7 +8,7 @@
 
 import Foundation
 
-func delay(delay:NSTimeInterval, _ closure:(Void->Void)?) {
+public func delay(delay:NSTimeInterval, _ closure:(Void->Void)?) {
     guard let closure = closure else { return }
     dispatch_after(
         dispatch_time(
