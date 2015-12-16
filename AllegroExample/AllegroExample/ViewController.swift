@@ -50,6 +50,13 @@ class ViewController: DataSourceViewController {
                     self.play(generator)
             }
             
+            section <<< TableViewItem<TableCell> { cell in
+                cell.textLabel?.text = "Dynamics"
+                }.onTap { _ in
+                    let music = (A[4]/4).loudness(Loudness.Forte) + (A[4]/4).loudness(Loudness.MezzoForte) + (A[4]/4).loudness(Loudness.Forte)
+                    self.play(music)
+            }
+
             
         }
     }

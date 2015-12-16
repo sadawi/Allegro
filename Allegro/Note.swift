@@ -11,10 +11,20 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
     public var pitch:Pitch
     public var duration:Duration
     public var loudness:Loudness = 𝆐𝆑
+
+    public var clone: Note {
+        return Note(pitch: self.pitch, duration: self.duration, loudness: self.loudness)
+    }
     
     init(pitch:Pitch, duration:Duration) {
         self.pitch = pitch
         self.duration = duration
+    }
+    
+    init(pitch:Pitch, duration:Duration, loudness:Loudness) {
+        self.pitch = pitch
+        self.duration = duration
+        self.loudness = loudness
     }
     
     // MARK: - Transformation shortcuts
@@ -38,6 +48,12 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
     
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
         performer.perform(pitch: self.pitch, loudness: self.loudness, duration: self.duration, completion: completion)
+    }
+    
+    public func loudness(loudness: Loudness) -> Note {
+        var note = self.clone
+        note.loudness = loudness
+        return note
     }
     
 }
