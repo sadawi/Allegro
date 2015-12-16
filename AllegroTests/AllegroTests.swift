@@ -112,4 +112,28 @@ class AllegroTests: XCTestCase {
         let fast = Tempo(120, 𝅘𝅥)
         XCTAssertEqual(fast.timeIntervalForDuration(𝅘𝅥), 0.5)
     }
+    
+    func testSlices() {
+        let note = A[4]/2
+        let (head, tail) = note.cut(at: Duration.Quarter)
+        let headNote = head as? Note
+        let tailNote = tail as? Note
+        XCTAssertNotNil(headNote)
+        XCTAssertNotNil(tailNote)
+        XCTAssertEqual(headNote!.pitch, A[4])
+        XCTAssertEqual(tailNote!.pitch, A[4])
+        
+        
+        let phrase = A[4]/4 + C[4]/4
+        let slice = phrase.slice(to: Duration.Eighth) as? SequenceExpression
+        XCTAssertNotNil(slice)
+        
+        let firstNote = slice?.expressions[0] as? Note
+        XCTAssertEqual(firstNote, A[4]/8)
+        
+        let parallel = A[4]/4 | C[4]/4
+        let firstChord = parallel.firstChord()
+        
+        XCTAssertEqual(firstChord!, A[4] | C[4])
+    }
 }

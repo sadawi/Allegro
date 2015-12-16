@@ -59,6 +59,7 @@ public class Instrument: Performer {
         }
     }
 
+    // TODO: maybe move this into the Sampler subclass.  the separate start/stop
     func startPlayingPitch(pitch:Pitch, loudness:Loudness) {
         
     }

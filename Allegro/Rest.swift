@@ -18,6 +18,34 @@ public struct Rest: Expression, Equatable {
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
         performer.perform(duration: self.duration, completion: completion)
     }
+    
+//    // TODO: ensure to > from
+//    public func slice(from from: Duration?, to: Duration?) -> Expression? {
+//        let from = from ?? Duration.Zero
+//        let to = to ?? self.duration
+//        return Rest(to - from)
+//    }
+
+    // TODO: seems repetitive with ChordedNote and Note
+    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+        if self.duration < offset {
+            return (self.copy(), nil)
+        } else {
+            var head = self.copy() as! Rest
+            var tail = self.copy() as! Rest
+            head.duration = offset
+            tail.duration = self.duration - offset
+            return (head, tail)
+        }
+    }
+
+    public func copy() -> Expression {
+        return Rest(self.duration)
+    }
+    
+    public func firstChord() -> Chord? {
+        return nil
+    }
 }
 
 public func ==(left:Rest, right:Rest) -> Bool {

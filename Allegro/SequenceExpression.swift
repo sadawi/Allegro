@@ -36,12 +36,20 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
         self.expressions = expressions
     }
 
+    public init(expressions: [Expression]) {
+        self.expressions = expressions
+    }
+
     public var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
             result += expression.duration.length
         }
         return Duration(length: result)
+    }
+    
+    public func copy() -> Expression {
+        return SequenceExpression(self.expressions)
     }
     
     public func add(expression:Expression) {
@@ -60,6 +68,51 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
         } else {
             completion?()
         }
+    }
+    
+    public func firstChord() -> Chord? {
+        return self.head?.firstChord()
+    }
+    
+    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+        if offset.length == 0 {
+            return (nil, self)
+        }
+        var head:SequenceExpression? = nil
+        var tail:SequenceExpression? = nil
+        
+        if self.duration < offset {
+            head = self.copy() as? SequenceExpression
+            tail = nil
+        } else {
+            head = SequenceExpression()
+            tail = SequenceExpression()
+            
+            var remaining = offset
+            for expression in self.expressions {
+                let expression = expression.copy()
+                let length = expression.duration
+                if length <= remaining {
+                    head?.add(expression)
+                } else if remaining.length > 0 {
+                    let (newHead, newTail) = expression.cut(at: remaining)
+                    if let newHead = newHead {
+                        head?.add(newHead)
+                        remaining = remaining - newHead.duration
+                    }
+                    if let newTail = newTail {
+                        tail?.add(newTail)
+                    }
+                } else {
+                    tail?.add(expression)
+                }
+            }
+        }
+        
+//        head.offset = Duration.Zero  // TODO
+//        tail.offset = offset
+        
+        return (head, tail)
     }
 }
 

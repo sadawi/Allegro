@@ -33,4 +33,32 @@ public struct ChordedNote: Expression {
         performer.perform(duration: self.duration, completion: completion)
     }
 
+    
+//    // TODO: ensure to > from
+//    public func slice(from from: Duration?, to: Duration?) -> Expression? {
+//        let from = from ?? Duration.Zero
+//        let to = to ?? self.duration
+//        return ChordedNote(chord: self.chord, duration: to - from)
+//    }
+    
+    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+        if self.duration < offset {
+            return (self.copy(), nil)
+        } else {
+            var head = self.copy() as! ChordedNote
+            var tail = self.copy() as! ChordedNote
+            head.duration = offset
+            tail.duration = self.duration - offset
+            return (head, tail)
+        }
+    }
+    
+    public func firstChord() -> Chord? {
+        return self.chord
+    }
+ 
+    public func copy() -> Expression {
+        return ChordedNote(chord: self.chord, duration: self.duration, loudness: self.loudness)
+    }
+
 }

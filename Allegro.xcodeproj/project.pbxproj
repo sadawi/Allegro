@@ -17,7 +17,7 @@
 		22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4F91C129F8D00B1952B /* Scale.swift */; };
 		22C8F4FC1C12A0A700B1952B /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4FB1C12A0A700B1952B /* Chord.swift */; };
 		22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */; };
-		22C8F5011C12A1B700B1952B /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5001C12A1B700B1952B /* protocols.swift */; };
+		22C8F5011C12A1B700B1952B /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5001C12A1B700B1952B /* Expression.swift */; };
 		22C8F5071C12A2A700B1952B /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5061C12A2A700B1952B /* Rest.swift */; };
 		22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */; };
 		22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */; };
@@ -31,7 +31,7 @@
 		22D7C2771C2070950044D133 /* delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2761C2070950044D133 /* delay.swift */; };
 		22D7C2CB1C21AF580044D133 /* Allegro.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2CA1C21AF580044D133 /* Allegro.podspec */; };
 		22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */; };
-		22D7C2D31C21E0DF0044D133 /* Transformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2D21C21E0DF0044D133 /* Transformers.swift */; };
+		22D7C2D31C21E0DF0044D133 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2D21C21E0DF0044D133 /* Transformer.swift */; };
 		22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF931C1E944B0014FC22 /* NotationView.swift */; };
 		22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */; };
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
@@ -66,7 +66,7 @@
 		22C8F4F91C129F8D00B1952B /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		22C8F4FB1C12A0A700B1952B /* Chord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordedNote.swift; sourceTree = "<group>"; };
-		22C8F5001C12A1B700B1952B /* protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		22C8F5001C12A1B700B1952B /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
 		22C8F5061C12A2A700B1952B /* Rest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
 		22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceExpression.swift; sourceTree = "<group>"; };
 		22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelExpression.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		22D7C2761C2070950044D133 /* delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delay.swift; sourceTree = "<group>"; };
 		22D7C2CA1C21AF580044D133 /* Allegro.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Allegro.podspec; sourceTree = "<group>"; };
 		22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorExpression.swift; sourceTree = "<group>"; };
-		22D7C2D21C21E0DF0044D133 /* Transformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformers.swift; sourceTree = "<group>"; };
+		22D7C2D21C21E0DF0044D133 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		22E7BF931C1E944B0014FC22 /* NotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationView.swift; sourceTree = "<group>"; };
 		22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplerInstrument.swift; sourceTree = "<group>"; };
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		22C8F5051C12A28200B1952B /* simple */ = {
 			isa = PBXGroup;
 			children = (
-				22C8F5001C12A1B700B1952B /* protocols.swift */,
+				22C8F5001C12A1B700B1952B /* Expression.swift */,
 				22C8F4F71C129EEE00B1952B /* Note.swift */,
 				22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */,
 				22C8F5061C12A2A700B1952B /* Rest.swift */,
@@ -229,7 +229,7 @@
 		22D7C2D11C21E0BA0044D133 /* transformers */ = {
 			isa = PBXGroup;
 			children = (
-				22D7C2D21C21E0DF0044D133 /* Transformers.swift */,
+				22D7C2D21C21E0DF0044D133 /* Transformer.swift */,
 			);
 			name = transformers;
 			sourceTree = "<group>";
@@ -393,9 +393,9 @@
 				22961F731C1F3E4900236085 /* Clef.swift in Sources */,
 				22C8F4FA1C129F8D00B1952B /* Scale.swift in Sources */,
 				22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */,
-				22C8F5011C12A1B700B1952B /* protocols.swift in Sources */,
+				22C8F5011C12A1B700B1952B /* Expression.swift in Sources */,
 				22D7C2771C2070950044D133 /* delay.swift in Sources */,
-				22D7C2D31C21E0DF0044D133 /* Transformers.swift in Sources */,
+				22D7C2D31C21E0DF0044D133 /* Transformer.swift in Sources */,
 				22C8F51A1C13763F00B1952B /* Mode.swift in Sources */,
 				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,

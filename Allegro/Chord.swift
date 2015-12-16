@@ -14,7 +14,7 @@ A set of pitches sounded simultaneously.
 If you want a chord with duration, use the ChordedNote class.
 */
 
-public struct Chord {
+public struct Chord:Equatable {
     public var pitches:[Pitch]
     
     public init(_ pitches:[Pitch]) {
@@ -27,7 +27,11 @@ public struct Chord {
     public func note(duration:Duration) -> ChordedNote {
         return ChordedNote(chord:self, duration:duration)
     }
-    
+
+}
+
+public func ==(left:Chord, right:Chord) -> Bool {
+    return left.pitches == right.pitches
 }
 
 public func /(chord:Chord, divisor:Int) -> ChordedNote {
@@ -42,4 +46,8 @@ public func |(chord:Chord, pitch:Pitch) -> Chord {
     var pitches = chord.pitches
     pitches.append(pitch)
     return Chord(pitches)
+}
+
+public func |(left:Chord, right:Chord) -> Chord {
+    return Chord(left.pitches + right.pitches)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Duration: Equatable {
+public struct Duration: Equatable, Comparable {
     /**
      Arbitrary units representing the length in time.
      */
@@ -39,7 +39,8 @@ public struct Duration: Equatable {
     public static let SixtyFourth               = ThirtySecond / 2
     public static let OneHundredTwentyEighth    = SixtyFourth / 2
     
-    public static let Infinite = Duration(length: Double.infinity)
+    public static let Zero                      = Duration(length: 0)
+    public static let Infinite                  = Duration(length: Double.infinity)
     
     public var rest: Rest {
         return Rest(self)
@@ -48,6 +49,10 @@ public struct Duration: Equatable {
 
 public func == (left:Duration, right:Duration) -> Bool {
     return left.length == right.length
+}
+
+public func < (left:Duration, right:Duration) -> Bool {
+    return left.length < right.length
 }
 
 public func / (duration:Duration, number:Double) -> Duration {
@@ -76,6 +81,10 @@ public func + (number:Double, duration:Duration) -> Duration {
 
 public func + (durationOne:Duration, durationTwo:Duration) -> Duration {
     return Duration(length: durationOne.length + durationTwo.length)
+}
+
+public func - (durationOne:Duration, durationTwo:Duration) -> Duration {
+    return Duration(length: durationOne.length - durationTwo.length)
 }
 
 public let 𝅝 = Duration.Whole
