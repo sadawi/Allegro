@@ -49,6 +49,11 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(note2.duration, Duration.Quarter)
     }
     
+    func testChords() {
+        let chord = A[4] | C[5] | E[5]
+        XCTAssertEqual(chord.pitches, [A[4], C[5], E[5]])
+    }
+    
     func testScales() {
         let scale = D.majorScale
         let pitchClasses = scale.pitchClasses()
@@ -92,6 +97,9 @@ class AllegroTests: XCTestCase {
         
         let parallel: ParallelExpression = [ C[4]/4, E[4]/4 ]
         XCTAssertEqual(parallel.duration, Duration.Quarter)
+        
+        let another = C[4]/4 | C[3]/4
+        XCTAssertEqual(another.expressions.count, 2)
     }
     
     func testTempo() {

@@ -37,3 +37,9 @@ public func /(chord:Chord, divisor:Int) -> ChordedNote {
 public func |(left:Pitch, right:Pitch) -> Chord {
     return Chord([left, right])
 }
+
+public func |(chord:Chord, pitch:Pitch) -> Chord {
+    var pitches = chord.pitches
+    pitches.append(pitch)
+    return Chord(pitches)
+}

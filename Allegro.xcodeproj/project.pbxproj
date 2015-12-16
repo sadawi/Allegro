@@ -30,6 +30,7 @@
 		22C8F51C1C1537D300B1952B /* Transposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F51B1C1537D300B1952B /* Transposable.swift */; };
 		22D7C2771C2070950044D133 /* delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2761C2070950044D133 /* delay.swift */; };
 		22D7C2CB1C21AF580044D133 /* Allegro.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2CA1C21AF580044D133 /* Allegro.podspec */; };
+		22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */; };
 		22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF931C1E944B0014FC22 /* NotationView.swift */; };
 		22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */; };
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
@@ -77,6 +78,7 @@
 		22C8F51B1C1537D300B1952B /* Transposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transposable.swift; sourceTree = "<group>"; };
 		22D7C2761C2070950044D133 /* delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = delay.swift; sourceTree = "<group>"; };
 		22D7C2CA1C21AF580044D133 /* Allegro.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Allegro.podspec; sourceTree = "<group>"; };
+		22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorExpression.swift; sourceTree = "<group>"; };
 		22E7BF931C1E944B0014FC22 /* NotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationView.swift; sourceTree = "<group>"; };
 		22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplerInstrument.swift; sourceTree = "<group>"; };
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				22C8F5051C12A28200B1952B /* simple */,
 				22C8F5081C12A3AC00B1952B /* compound */,
 				22C8F51B1C1537D300B1952B /* Transposable.swift */,
+				22D7C2CE1C21CADD0044D133 /* generators */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -210,6 +213,14 @@
 			children = (
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		22D7C2CE1C21CADD0044D133 /* generators */ = {
+			isa = PBXGroup;
+			children = (
+				22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */,
+			);
+			name = generators;
 			sourceTree = "<group>";
 		};
 		22E7BF921C1E94260014FC22 /* views */ = {
@@ -378,6 +389,7 @@
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
 				22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */,
 				22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */,
+				22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
