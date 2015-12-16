@@ -17,10 +17,11 @@ A[4].transposed(up: Interval.MajorThird)
 A[5].transposed(semitones: -3)
 ```
 
-A combination of pitches is called a `Chord`.
+A combination of pitches is called a `Chord`, which can be constructed explicitly or using the `|` operator.
 
 ```swift
-let triad = Chord(pitches: [ C[4], E[4], G[4] ])
+let triad = Chord([ C[4], E[4], G[4] ])
+let triad = C[4] | E[4] | G[4]
 ```
 
 ## Durations, Notes, ChordedNotes
@@ -76,4 +77,10 @@ All compound expressions conform to `ArrayLiteralConvertible`:
 
 ```swift
 let phrase:SequenceExpression = [ C[4]/4, C[4]/4, G[4]/4, G[4]/4 ]
+```
+
+The `|` operator can be used to combine expressions into `ParallelExpression`s:
+
+```swift
+let music = [ A[4]/4, B[4]/4 ] | A[2]/2
 ```
