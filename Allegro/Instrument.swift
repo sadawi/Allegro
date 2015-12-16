@@ -11,7 +11,7 @@ import Foundation
 public class Instrument {
     public var tempo:Tempo = Tempo(100)
 
-    public func playNote(note:Note, then:(Void -> Void)) {
+    public func playNote(note:Note, then:(Void -> Void)?=nil) {
         let interval = self.tempo.timeIntervalForDuration(note.duration)
         self.startPlayingPitch(note.pitch, loudness: note.loudness)
         delay(interval) {

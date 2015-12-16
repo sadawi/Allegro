@@ -1,0 +1,14 @@
+PODS:
+  - Allegro (0.1.0)
+
+DEPENDENCIES:
+  - Allegro (from `~/Dropbox/projects/_lib/iOS/Allegro`)
+
+EXTERNAL SOURCES:
+  Allegro:
+    :path: "~/Dropbox/projects/_lib/iOS/Allegro"
+
+SPEC CHECKSUMS:
+  Allegro: a22f3c246e6b34f4765e97edf2c2fb82e7e7e872
+
+COCOAPODS: 0.39.0

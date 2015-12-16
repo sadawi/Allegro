@@ -47,6 +47,7 @@ public class SamplerInstrument: Instrument {
         self.engine.connect(self.sampler, to: self.engine.outputNode, format: nil)
         
         if let soundbankURL = NSBundle.mainBundle().URLForResource(self.filename, withExtension: "sf2") {
+            try self.engine.start()
             try self.sampler.loadSoundBankInstrumentAtURL(soundbankURL, program: self.patchNumber, bankMSB: self.bank, bankLSB: 0)
         }
     }
