@@ -79,7 +79,7 @@ The `+` operator combines expressions into SequenceExpressions:
 let phrase = C[4]/4 + C[4]/4 + G[4]/4 + G[4]/4
 ```
 
-The `|` operator can be used to combine expressions into `ParallelExpression`s:
+The `|` operator can be used to combine expressions into ParallelExpressions:
 
 ```swift
 let music = (A[4]/4 + B[4]/4) | A[2]/2
