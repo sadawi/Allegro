@@ -84,3 +84,20 @@ public let 𝅘𝅥𝅯 = Duration.Sixteenth
 public let 𝅘𝅥𝅰 = Duration.ThirtySecond
 public let 𝅘𝅥𝅱 = Duration.SixtyFourth
 public let 𝅘𝅥𝅲 = Duration.OneHundredTwentyEighth
+
+public func *(duration:Duration, pitch:Pitch) -> Note {
+    return pitch.note(duration)
+}
+
+public func *(pitch:Pitch, duration:Duration) -> Note {
+    return pitch.note(duration)
+}
+
+public func *(duration:Duration, pitches:[Pitch]) -> SequenceExpression {
+    let notes = pitches.map { $0.note(duration) as Expression }
+    return SequenceExpression(notes)
+}
+
+public func *(pitches:[Pitch], duration:Duration) -> SequenceExpression {
+    return duration * pitches
+}
