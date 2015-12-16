@@ -53,6 +53,8 @@ Rests:
 ```swift
 R/4
 Rest(Duration.Quarter)
+Duration.Quarter.rest
+𝄽
 ```
 
 ## Scales
