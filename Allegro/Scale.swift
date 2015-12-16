@@ -138,7 +138,7 @@ public class DiatonicScale: Scale {
     public func triadFromPitch(pitch: Pitch) -> Chord? {
         let pitches = self.pitchesStartingWithPitch(pitch)
         if pitches.count >= 5 {
-            return Chord(pitches: [pitches[0], pitches[2], pitches[4]])
+            return Chord([pitches[0], pitches[2], pitches[4]])
         } else {
             return nil
         }

@@ -39,3 +39,11 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
 public func |(left:Expression, right:Expression) -> ParallelExpression {
     return ParallelExpression([left, right])
 }
+
+public func |(left:[Expression], right:Expression) -> ParallelExpression {
+    return ParallelExpression([SequenceExpression(left), right])
+}
+
+public func |(left:Expression, right:[Expression]) -> ParallelExpression {
+    return ParallelExpression([left, SequenceExpression(right)])
+}
