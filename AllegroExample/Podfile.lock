@@ -1,14 +1,25 @@
 PODS:
   - Allegro (0.1.0)
+  - PrimarySource (0.1.0)
 
 DEPENDENCIES:
   - Allegro (from `~/Dropbox/projects/_lib/iOS/Allegro`)
+  - PrimarySource (from `git@github.com:sadawi/PrimarySource`, tag `0.1.0`)
 
 EXTERNAL SOURCES:
   Allegro:
     :path: "~/Dropbox/projects/_lib/iOS/Allegro"
+  PrimarySource:
+    :git: git@github.com:sadawi/PrimarySource
+    :tag: 0.1.0
+
+CHECKOUT OPTIONS:
+  PrimarySource:
+    :git: git@github.com:sadawi/PrimarySource
+    :tag: 0.1.0
 
 SPEC CHECKSUMS:
   Allegro: a22f3c246e6b34f4765e97edf2c2fb82e7e7e872
+  PrimarySource: e5da5b9ec7a3827ca1cc7dcbab70bfd77793f284
 
 COCOAPODS: 0.39.0

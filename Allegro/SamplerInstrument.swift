@@ -51,4 +51,13 @@ public class SamplerInstrument: Instrument {
             try self.sampler.loadSoundBankInstrumentAtURL(soundbankURL, program: self.patchNumber, bankMSB: self.bank, bankLSB: 0)
         }
     }
+    
+    
+    public override func stop() {
+        super.stop()
+        for i in MIDI.MinimumMIDINumber..<MIDI.MaximumMIDINumber {
+            self.sampler.stopNote(i, onChannel: 0)
+        }
+    }
+
 }

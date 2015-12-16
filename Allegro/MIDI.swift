@@ -10,6 +10,8 @@ import Foundation
 
 struct MIDI {
     static let C0MIDINumber:UInt8 = 12 // Or is it?
+    static let MinimumMIDINumber:UInt8 = 0
+    static let MaximumMIDINumber:UInt8 = 127
 }
 
 extension Pitch {

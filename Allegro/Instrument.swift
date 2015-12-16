@@ -8,12 +8,20 @@
 
 import Foundation
 
+public enum InstrumentState {
+    case Playing
+    case Paused
+    case Stopped
+}
+
 public protocol Performer {
+    func stop()
     func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?)
     func perform(duration duration:Duration, completion:(Void -> Void)?)
 }
 
 public class Instrument: Performer {
+    public var state:InstrumentState = .Stopped
     public var tempo:Tempo = Tempo(100)
 
 //    public func perform(expression:Expression, completion: (Void -> Void)) {
@@ -23,18 +31,24 @@ public class Instrument: Performer {
 //    }
 //    
     
+    public func stop() {
+        self.state = .Stopped
+    }
+    
     public func perform(duration duration:Duration, completion:(Void -> Void)?) {
         self.perform(pitch: nil, loudness: nil, duration: duration, completion: completion)
     }
     
     public func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?) {
-        
+        self.state = .Playing
         let interval = self.tempo.timeIntervalForDuration(duration)
         if let pitch = pitch, loudness = loudness {
             self.startPlayingPitch(pitch, loudness: loudness)
             delay(interval) {
                 self.stopPlayingPitch(pitch)
-                completion?()
+                if self.state == .Playing {
+                    completion?()
+                }
             }
         } else {
             delay(interval, completion)
