@@ -73,14 +73,14 @@ Any musical object that conforms to the `Expression` protocol has a duration, an
 * `ParallelExpression`: Each subexpression should start playing at the same time.
 * `PolyphonicExpression`: Each subexpression has its own time index at which it should start playing.
 
-Parallel and sequence expressions conform to `ArrayLiteralConvertible`:
+The `+` operator combines expressions into SequenceExpressions:
 
 ```swift
-let phrase:SequenceExpression = [ C[4]/4, C[4]/4, G[4]/4, G[4]/4 ]
+let phrase = C[4]/4 + C[4]/4 + G[4]/4 + G[4]/4
 ```
 
 The `|` operator can be used to combine expressions into `ParallelExpression`s:
 
 ```swift
-let music = [ A[4]/4, B[4]/4 ] | A[2]/2
+let music = (A[4]/4 + B[4]/4) | A[2]/2
 ```
