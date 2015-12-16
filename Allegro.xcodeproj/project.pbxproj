@@ -19,7 +19,6 @@
 		22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */; };
 		22C8F5011C12A1B700B1952B /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5001C12A1B700B1952B /* protocols.swift */; };
 		22C8F5071C12A2A700B1952B /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5061C12A2A700B1952B /* Rest.swift */; };
-		22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F5091C12A3C100B1952B /* CompoundExpression.swift */; };
 		22C8F50C1C12A5C100B1952B /* SequenceExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */; };
 		22C8F50E1C12A5C900B1952B /* ParallelExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */; };
 		22C8F5101C12ACEA00B1952B /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F50F1C12ACE900B1952B /* Interval.swift */; };
@@ -67,7 +66,6 @@
 		22C8F4FD1C12A12D00B1952B /* ChordedNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordedNote.swift; sourceTree = "<group>"; };
 		22C8F5001C12A1B700B1952B /* protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
 		22C8F5061C12A2A700B1952B /* Rest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
-		22C8F5091C12A3C100B1952B /* CompoundExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundExpression.swift; sourceTree = "<group>"; };
 		22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceExpression.swift; sourceTree = "<group>"; };
 		22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelExpression.swift; sourceTree = "<group>"; };
 		22C8F50F1C12ACE900B1952B /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 		22C8F5081C12A3AC00B1952B /* compound */ = {
 			isa = PBXGroup;
 			children = (
-				22C8F5091C12A3C100B1952B /* CompoundExpression.swift */,
 				22C8F50B1C12A5C100B1952B /* SequenceExpression.swift */,
 				22C8F50D1C12A5C800B1952B /* ParallelExpression.swift */,
 				22C8F5131C13512300B1952B /* PolyphonicExpression.swift */,
@@ -380,7 +377,6 @@
 				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
 				22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */,
-				22C8F50A1C12A3C100B1952B /* CompoundExpression.swift in Sources */,
 				22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

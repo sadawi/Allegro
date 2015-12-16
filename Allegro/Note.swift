@@ -36,6 +36,10 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
         return result
     }
     
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+        performer.perform(pitch: self.pitch, duration: self.duration, completion: completion)
+    }
+    
 }
 
 public func ==(left:Note, right:Note) -> Bool {

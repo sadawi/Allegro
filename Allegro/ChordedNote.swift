@@ -19,4 +19,11 @@ public struct ChordedNote: Expression {
         return SequenceExpression(expressions:notes)
     }
 
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+        for pitch in self.chord.pitches {
+            performer.perform(pitch: pitch, duration: self.duration, completion: nil)
+        }
+        performer.perform(duration: self.duration, completion: completion)
+    }
+
 }

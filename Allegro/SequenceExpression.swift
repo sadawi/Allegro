@@ -8,18 +8,35 @@
 
 import Foundation
 
-public class SequenceExpression: CompoundExpression, ArrayLiteralConvertible {
+public class SequenceExpression: Expression, ArrayLiteralConvertible {
+    var expressions:[Expression] = []
     
-    // "Synthesizing a variadic inherited initializer for subclass is unsupported"
-    public required init(arrayLiteral expressions: Expression...) {
-        super.init(expressions: expressions)
-    }
-    
-    public override init(expressions: [Expression]) {
-        super.init(expressions: expressions)
+    var head:Expression? {
+        if self.expressions.count > 0 {
+            return self.expressions[0]
+        } else {
+            return nil
+        }
     }
 
-    public override var duration: Duration {
+    var tail:SequenceExpression? {
+        if self.expressions.count > 1 {
+            let a = self.expressions
+            return SequenceExpression(expressions: Array(a[1..<a.count]))
+        } else {
+            return nil
+        }
+    }
+
+    public required init(arrayLiteral expressions: Expression...) {
+        self.expressions = expressions
+    }
+    
+    public init(expressions: [Expression]) {
+        self.expressions = expressions
+    }
+
+    public var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
             result += expression.duration.length
@@ -30,4 +47,19 @@ public class SequenceExpression: CompoundExpression, ArrayLiteralConvertible {
     public func add(expression:Expression) {
         self.expressions.append(expression)
     }
+    
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+        if let head = self.head {
+            head.perform(on: performer) {
+                if let tail = self.tail {
+                    tail.perform(on: performer, completion: completion)
+                } else {
+                    completion?()
+                }
+            }
+        } else {
+            completion?()
+        }
+    }
+
 }

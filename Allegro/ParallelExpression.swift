@@ -8,18 +8,26 @@
 
 import Foundation
 
-public class ParallelExpression: CompoundExpression, ArrayLiteralConvertible {
-    
-    // "Synthesizing a variadic inherited initializer for subclass is unsupported"
+public class ParallelExpression: Expression, ArrayLiteralConvertible {
+    var expressions:[Expression] = []
+
     public required init(arrayLiteral expressions: Expression...) {
-        super.init(expressions: expressions)
+        self.expressions = expressions
     }
     
-    public override var duration: Duration {
+    public var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
             result = max(result, expression.duration.length)
         }
         return Duration(length: result)
     }
+    
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+        for expression in self.expressions {
+            expression.perform(on: performer, completion: nil)
+        }
+        performer.perform(duration: self.duration, completion: completion)
+    }
+
 }

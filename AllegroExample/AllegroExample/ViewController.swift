@@ -13,8 +13,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0)
-        piano?.playNote(A[4]/4)
+        if let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0) {
+            let music = SequenceExpression(expressions: C.majorScale.pitchesStartingInOctave(4).map { $0/4 })
+            piano.play(music)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,6 +10,7 @@ import Foundation
 
 public protocol Expression {
     var duration:Duration { get }
+    func perform(on performer: Performer, completion: (Void -> Void)?)
 }
 
 public protocol Sounded {

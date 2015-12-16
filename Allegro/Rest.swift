@@ -10,6 +10,10 @@ import Foundation
 
 public struct Rest: Expression, Equatable {
     public var duration:Duration
+
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+        performer.perform(duration: self.duration, completion: completion)
+    }
 }
 
 public func ==(left:Rest, right:Rest) -> Bool {
