@@ -66,7 +66,7 @@ C.majorScale.dominant
 
 ## Expressions
 
-Any musical object that conforms to the `Expression` protocol has a duration, and can be combined into larger (recursive) groupings called `CompoundExpression`s.  When performing an expression, subclasses of `CompoundExpression` decide how their subexpressions should be realized.
+Any musical object that conforms to the `Expression` protocol has a duration, and can be combined into larger (recursive) groupings:
 
 * `SequenceExpression`: All subexpressions are performed in sequence, one after the other.
 * `ParallelExpression`: Each subexpression should start playing at the same time.
