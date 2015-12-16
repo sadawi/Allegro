@@ -4,7 +4,7 @@ Swift music theory.
 
 Equal temperament is used throughout.
 
-## Pitches
+## Pitches and Chords
 
 The chroma of a note, independent of octave, is represented by the `PitchClass` struct.  A `PitchClass` is specified by a number of semitones above an arbitrary base, which we call `C`.  Public constants are provided for all the natural pitches (C, D, E, F, G, A, B). Accidentals can be reached using the `flat` and `sharp` methods, or the postfix operators `♯` and `♭`.
 
@@ -25,15 +25,17 @@ let triad = Chord(pitches: [ C[4], E[4], G[4] ])
 
 ## Durations, Notes, ChordedNotes
 
-The `Duration` struct describes durations with abstract length units.  There are constants and Unicode symbols for the base durations, and more can be created with the `dotted` and `triplet` methods.  Arithmetic operators work on durations, too.  
+The `Duration` struct describes durations with abstract length units.  There are constants and Unicode symbols for the base durations, and more can be created with the `dotted`, `triplet`, and `tuplet` methods.  Arithmetic operators work on durations, too.  
 
 These are all equivalent:
 
 ```swift
 Duration.Quarter
 𝅘𝅥
+𝅘𝅥𝅮+𝅘𝅥𝅮
 Duration.Eighth * 2
 3 * 𝅘𝅥𝅮.triplet
+3 * 𝅘𝅥𝅮.tuplet(3)
 ```
 
 A pitch with a duration is called a `Note`.  A chord with a duration is called a `ChordedNote`.  The division operator can be used to create these -- divide by 4 to create a quarter note, etc.  These are all equivalent:
@@ -60,4 +62,18 @@ Scales all provide a number of methods for interacting with pitches and chords. 
 ```swift
 C.majorScale.dominant
 // --> G
+```
+
+## Expressions
+
+Any musical object that conforms to the `Expression` protocol has a duration, and can be combined into larger (recursive) groupings called `CompoundExpression`s.  When performing an expression, subclasses of `CompoundExpression` decide how their subexpressions should be realized.
+
+* `SequenceExpression`: All subexpressions are performed in sequence, one after the other.
+* `ParallelExpression`: Each subexpression should start playing at the same time.
+* `PolyphonicExpression`: Each subexpression has its own time index at which it should start playing.
+
+All compound expressions conform to `ArrayLiteralConvertible`:
+
+```swift
+let phrase:SequenceExpression = [ C[4]/4, C[4]/4, G[4]/4, G[4]/4 ]
 ```
