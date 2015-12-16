@@ -48,6 +48,13 @@ C[4].note(𝅘𝅥)
 C[4]/4
 ```
 
+Rests:
+
+```swift
+R/4
+Rest(Duration.Quarter)
+```
+
 ## Scales
 
 A Scale is defined by a tonic `PitchClass` and an array of `Interval`s.  Here, subclasses define the intervals, and instances specify the tonic.
