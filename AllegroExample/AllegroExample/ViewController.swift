@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0) {
-            let music = SequenceExpression(expressions: C.majorScale.pitchesStartingInOctave(4).map { $0/4 })
-            piano.play(music)
+            let music = SequenceExpression(expressions: C.majorScale.pitchesStartingInOctave(4).map { $0/8 })
+            music.perform(on: piano, completion: nil)
         }
     }
 

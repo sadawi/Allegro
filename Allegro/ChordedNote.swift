@@ -11,6 +11,13 @@ import Foundation
 public struct ChordedNote: Expression {
     public var chord:Chord
     public var duration:Duration
+    public var loudness:Loudness
+    
+    public init(chord:Chord, duration:Duration, loudness:Loudness = 𝆐𝆑) {
+        self.chord = chord
+        self.duration = duration
+        self.loudness = loudness
+    }
     
     // MARK: - To other data types
     
@@ -21,7 +28,7 @@ public struct ChordedNote: Expression {
 
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
         for pitch in self.chord.pitches {
-            performer.perform(pitch: pitch, duration: self.duration, completion: nil)
+            performer.perform(pitch: pitch, loudness: self.loudness, duration: self.duration, completion: nil)
         }
         performer.perform(duration: self.duration, completion: completion)
     }

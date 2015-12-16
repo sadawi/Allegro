@@ -37,7 +37,7 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
     }
     
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
-        performer.perform(pitch: self.pitch, duration: self.duration, completion: completion)
+        performer.perform(pitch: self.pitch, loudness: self.loudness, duration: self.duration, completion: completion)
     }
     
 }

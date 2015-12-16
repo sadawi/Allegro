@@ -9,9 +9,8 @@
 import Foundation
 
 public protocol Performer {
-    func perform(pitch pitch:Pitch?, duration:Duration?, completion:(Void -> Void)?)
-    func perform(pitch pitch:Pitch?, completion:(Void -> Void)?)
-    func perform(duration duration:Duration?, completion:(Void -> Void)?)
+    func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?)
+    func perform(duration duration:Duration, completion:(Void -> Void)?)
 }
 
 public class Instrument: Performer {
@@ -23,26 +22,25 @@ public class Instrument: Performer {
 //        }
 //    }
 //    
-    public func perform(pitch pitch:Pitch?, completion:(Void -> Void)?) {
-        self.perform(pitch: pitch, duration: nil, completion: completion)
+    
+    public func perform(duration duration:Duration, completion:(Void -> Void)?) {
+        self.perform(pitch: nil, loudness: nil, duration: duration, completion: completion)
     }
     
-    public func perform(duration duration:Duration?, completion:(Void -> Void)?) {
-        self.perform(pitch: nil, duration: duration, completion: completion)
-    }
-    
-    public func perform(pitch pitch:Pitch?, duration:Duration?, completion:(Void -> Void)?) {
+    public func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?) {
         
-    }
-
-    public func performNote(note:Note, completion:(Void -> Void)?=nil) {
-        let interval = self.tempo.timeIntervalForDuration(note.duration)
-        self.startPlayingPitch(note.pitch, loudness: note.loudness)
-        delay(interval) {
-            self.stopPlayingPitch(note.pitch)
+        let interval = self.tempo.timeIntervalForDuration(duration)
+        if let pitch = pitch, loudness = loudness {
+            self.startPlayingPitch(pitch, loudness: loudness)
+            delay(interval) {
+                self.stopPlayingPitch(pitch)
+                completion?()
+            }
+        } else {
+            delay(interval, completion)
         }
     }
-    
+
     func startPlayingPitch(pitch:Pitch, loudness:Loudness) {
         
     }
