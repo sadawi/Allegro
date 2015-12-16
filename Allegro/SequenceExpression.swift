@@ -62,3 +62,13 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
         }
     }
 }
+
+public func +(left:Expression, right:Expression) -> SequenceExpression {
+    if let leftSequence = left as? SequenceExpression {
+        var expressions = leftSequence.expressions
+        expressions.append(right)
+        return SequenceExpression(expressions)
+    } else {
+        return SequenceExpression([left, right])
+    }
+}

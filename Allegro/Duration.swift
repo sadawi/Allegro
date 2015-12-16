@@ -42,7 +42,7 @@ public struct Duration: Equatable {
     public static let Infinite = Duration(length: Double.infinity)
     
     public var rest: Rest {
-        return Rest(duration: self)
+        return Rest(self)
     }
 }
 

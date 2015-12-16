@@ -19,8 +19,12 @@ class ViewController: UIViewController {
 //            
 //            (melody|chords).perform(on: piano, completion: nil)
             
-            let generator = NoteGeneratorExpression(note: A[4]/4)
-            generator.perform(on: piano, completion: nil)
+//            let generator = NoteGeneratorExpression(note: A[4]/4)
+//            generator.perform(on: piano, completion: nil)
+            
+            let music = A[4]/4 + G[4]/8 + B[4]/8 + R/8 + A[4]/2
+            music.perform(on: piano, completion: nil)
+            
         }
     }
 
