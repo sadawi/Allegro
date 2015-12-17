@@ -42,12 +42,19 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(sequence.firstChord(), sequence.copy().firstChord())
     }
     
-    func testPitches() {
+    func testPitchClasses() {
         XCTAssertEqual(C♯, C.sharp)
         XCTAssertEqual(C♭, B)
         
         XCTAssertEqual(D.flat, C.sharp)
+        XCTAssertEqual(D.semitones - D.flat.semitones, 1)
+        XCTAssertEqual(D.semitones - D.halfFlat.semitones, 0.5)
         
+        XCTAssertEqual(D.sharp.semitones - D.semitones, 1)
+        XCTAssertEqual(D.halfSharp.semitones - D.semitones, 0.5)
+    }
+    
+    func testPitches() {
         let pitch:Pitch = C.sharp.pitch(0)
         let pitch2:Pitch = C♯ [0]
         XCTAssertEqual(pitch.semitonesFromBase, 1)
@@ -112,7 +119,7 @@ class AllegroTests: XCTestCase {
         let another = C[4]/4 | C[3]/4
         XCTAssertEqual(another.expressions.count, 2)
         
-        let repeated = 4 * (C[4]/4)
+        let repeated = C[4]/4 * 4
         XCTAssertEqual(repeated.duration, Duration.Whole)
     }
     
