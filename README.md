@@ -102,3 +102,5 @@ let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0)!
 let music = A[4]/4 + B[4]/4 + C[5]/4 + D[5]/4
 piano.play(music)
 ```
+
+A `SamplerInstrument` has a `Tempo` property, which defaults to 100 quarter notes per minute.
