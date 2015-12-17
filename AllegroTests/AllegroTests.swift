@@ -91,7 +91,7 @@ class AllegroTests: XCTestCase {
     }
     
     func testExpressions() {
-        let expression:SequenceExpression = [ D[4]/4, A[4]/16 ]
+        let expression:SequenceExpression = SequenceExpression([D[4]/4, A[4]/16])
         let first = expression.expressions[0] as! Note
         XCTAssertEqual(first, D[4]/4)
         
@@ -102,6 +102,9 @@ class AllegroTests: XCTestCase {
         
         let another = C[4]/4 | C[3]/4
         XCTAssertEqual(another.expressions.count, 2)
+        
+        let repeated = 4 * (C[4]/4)
+        XCTAssertEqual(repeated.duration, Duration.Whole)
     }
     
     func testTempo() {

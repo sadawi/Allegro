@@ -130,3 +130,15 @@ public func +(left:Expression, right:Expression) -> SequenceExpression {
         return SequenceExpression([left, right])
     }
 }
+
+public func *(count:Int, expression:Expression) -> SequenceExpression {
+    let result = SequenceExpression()
+    for _ in 0..<count {
+        result.add(expression)
+    }
+    return result
+}
+
+public func *(expression:Expression, count:Int) -> SequenceExpression {
+    return count * expression
+}

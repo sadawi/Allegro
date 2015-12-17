@@ -32,7 +32,6 @@
 		22D7C2CB1C21AF580044D133 /* Allegro.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2CA1C21AF580044D133 /* Allegro.podspec */; };
 		22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */; };
 		22D7C2D31C21E0DF0044D133 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2D21C21E0DF0044D133 /* Transformer.swift */; };
-		22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF931C1E944B0014FC22 /* NotationView.swift */; };
 		22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */; };
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
 		22E7BF9B1C1E9AFB0014FC22 /* MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */; };
@@ -81,7 +80,6 @@
 		22D7C2CA1C21AF580044D133 /* Allegro.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Allegro.podspec; sourceTree = "<group>"; };
 		22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorExpression.swift; sourceTree = "<group>"; };
 		22D7C2D21C21E0DF0044D133 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
-		22E7BF931C1E944B0014FC22 /* NotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationView.swift; sourceTree = "<group>"; };
 		22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplerInstrument.swift; sourceTree = "<group>"; };
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDI.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				22C8F4DE1C125E2800B1952B /* Info.plist */,
 				22C8F4DC1C125E2800B1952B /* Allegro.h */,
 				22C8F5021C12A1C600B1952B /* models */,
-				22E7BF921C1E94260014FC22 /* views */,
 				22C8F5171C13622800B1952B /* experiments.swift */,
 				22D7C2761C2070950044D133 /* delay.swift */,
 			);
@@ -232,14 +229,6 @@
 				22D7C2D21C21E0DF0044D133 /* Transformer.swift */,
 			);
 			name = transformers;
-			sourceTree = "<group>";
-		};
-		22E7BF921C1E94260014FC22 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				22E7BF931C1E944B0014FC22 /* NotationView.swift */,
-			);
-			name = views;
 			sourceTree = "<group>";
 		};
 		22E7BF951C1E992E0014FC22 /* players */ = {
@@ -399,7 +388,6 @@
 				22C8F51A1C13763F00B1952B /* Mode.swift in Sources */,
 				22C8F4F81C129EEE00B1952B /* Note.swift in Sources */,
 				22C8F5141C13512300B1952B /* PolyphonicExpression.swift in Sources */,
-				22E7BF941C1E944B0014FC22 /* NotationView.swift in Sources */,
 				22E7BFA01C1F1D850014FC22 /* TimeSignature.swift in Sources */,
 				22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */,
 			);
