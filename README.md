@@ -17,10 +17,11 @@ A[4].transposed(up: Interval.MajorThird)
 A[5].transposed(semitones: -3)
 ```
 
-A combination of pitches is called a `Chord`.
+A combination of pitches is called a `Chord`, which can be constructed explicitly or using the `|` operator.
 
 ```swift
-let triad = Chord(pitches: [ C[4], E[4], G[4] ])
+let triad = Chord([ C[4], E[4], G[4] ])
+let triad = C[4] | E[4] | G[4]
 ```
 
 ## Durations, Notes, ChordedNotes
@@ -47,6 +48,15 @@ C[4].note(𝅘𝅥)
 C[4]/4
 ```
 
+Rests:
+
+```swift
+R/4
+Rest(Duration.Quarter)
+Duration.Quarter.rest
+𝄽
+```
+
 ## Scales
 
 A Scale is defined by a tonic `PitchClass` and an array of `Interval`s.  Here, subclasses define the intervals, and instances specify the tonic.
@@ -66,14 +76,20 @@ C.majorScale.dominant
 
 ## Expressions
 
-Any musical object that conforms to the `Expression` protocol has a duration, and can be combined into larger (recursive) groupings called `CompoundExpression`s.  When performing an expression, subclasses of `CompoundExpression` decide how their subexpressions should be realized.
+Any musical object that conforms to the `Expression` protocol has a duration, and can be combined into larger (recursive) groupings:
 
 * `SequenceExpression`: All subexpressions are performed in sequence, one after the other.
 * `ParallelExpression`: Each subexpression should start playing at the same time.
 * `PolyphonicExpression`: Each subexpression has its own time index at which it should start playing.
 
-All compound expressions conform to `ArrayLiteralConvertible`:
+The `+` operator combines expressions into SequenceExpressions:
 
 ```swift
-let phrase:SequenceExpression = [ C[4]/4, C[4]/4, G[4]/4, G[4]/4 ]
+let phrase = C[4]/4 + C[4]/4 + G[4]/4 + G[4]/4
+```
+
+The `|` operator combines expressions into ParallelExpressions:
+
+```swift
+let music = (A[4]/4 + B[4]/4) | A[2]/2
 ```
