@@ -18,13 +18,6 @@ public struct Rest: Expression, Equatable {
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
         performer.perform(duration: self.duration, completion: completion)
     }
-    
-//    // TODO: ensure to > from
-//    public func slice(from from: Duration?, to: Duration?) -> Expression? {
-//        let from = from ?? Duration.Zero
-//        let to = to ?? self.duration
-//        return Rest(to - from)
-//    }
 
     // TODO: seems repetitive with ChordedNote and Note
     public func cut(at offset: Duration) -> (Expression?, Expression?) {

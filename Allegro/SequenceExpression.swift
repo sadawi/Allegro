@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ An Expression containing subexpressions that are realized in timewise sequence, one after the other.
+ */
 public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStringConvertible {
     var expressions:[Expression] = []
     
@@ -18,7 +21,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
             return nil
         }
     }
-
+    
     var tail:SequenceExpression? {
         if self.expressions.count > 1 {
             let a = self.expressions
@@ -27,7 +30,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
             return nil
         }
     }
-
+    
     public required init(arrayLiteral expressions: Expression...) {
         self.expressions = expressions
     }
@@ -35,11 +38,11 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
     public init(_ expressions: [Expression]) {
         self.expressions = expressions
     }
-
+    
     public init(expressions: [Expression]) {
         self.expressions = expressions
     }
-
+    
     public var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
@@ -109,8 +112,8 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
             }
         }
         
-//        head.offset = Duration.Zero  // TODO
-//        tail.offset = offset
+        //        head.offset = Duration.Zero  // TODO
+        //        tail.offset = offset
         
         return (head, tail)
     }
@@ -118,7 +121,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
     public var description:String {
         return self.expressions.map { "(\($0))" }.joinWithSeparator(" ")
     }
-
+    
 }
 
 public func +(left:Expression, right:Expression) -> SequenceExpression {

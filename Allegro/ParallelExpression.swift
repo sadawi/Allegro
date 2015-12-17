@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ An Expression containing subexpressions that are realized simultaneously.
+ Its duration is considered to be equal to that of its longest subexpression.
+ */
 public class ParallelExpression: Expression, ArrayLiteralConvertible {
     var expressions:[Expression] = []
 

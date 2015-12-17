@@ -56,13 +56,6 @@ public struct Note: Sounded, Expression, Transposable, Equatable, CustomStringCo
         return note
     }
     
-//    // TODO: ensure to > from
-//    public func slice(from from: Duration?, to: Duration?) -> Expression? {
-//        let from = from ?? Duration.Zero
-//        let to = to ?? self.duration
-//        return Note(pitch: self.pitch, duration: to - from)
-//    }
-    
     public func cut(at offset: Duration) -> (Expression?, Expression?) {
         if self.duration < offset {
             return (self.copy(), nil)
