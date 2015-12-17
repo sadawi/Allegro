@@ -35,7 +35,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         self.expressions = expressions
     }
     
-    public init(_ expressions: [Expression]) {
+    public required init(_ expressions: [Expression]) {
         self.expressions = expressions
     }
     
@@ -51,8 +51,8 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         return Duration(length: result)
     }
     
-    public func copy() -> Expression {
-        return SequenceExpression(self.expressions)
+    public func copy() -> Self {
+        return self.dynamicType.init(self.expressions)
     }
     
     public func add(expression:Expression) {
@@ -85,7 +85,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         var tail:SequenceExpression? = nil
         
         if self.duration < offset {
-            head = self.copy() as? SequenceExpression
+            head = self.copy()
             tail = nil
         } else {
             head = SequenceExpression()

@@ -7,7 +7,7 @@
 //
 
 
-public struct Note: Sounded, Expression, Transposable, Equatable, CustomStringConvertible {
+public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomStringConvertible {
     public var pitch:Pitch
     public var duration:Duration
     public var loudness:Loudness = 𝆐𝆑
@@ -56,23 +56,11 @@ public struct Note: Sounded, Expression, Transposable, Equatable, CustomStringCo
         return note
     }
     
-    public func cut(at offset: Duration) -> (Expression?, Expression?) {
-        if self.duration < offset {
-            return (self.copy(), nil)
-        } else {
-            var head = self.copy() as! Note
-            var tail = self.copy() as! Note
-            head.duration = offset
-            tail.duration = self.duration - offset
-            return (head, tail)
-        }
-    }
-    
     public func firstChord() -> Chord? {
         return Chord([self.pitch])
     }
     
-    public func copy() -> Expression {
+    public func copy() -> Note {
         return Note(pitch: self.pitch, duration: self.duration, loudness: self.loudness)
     }
     

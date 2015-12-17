@@ -20,7 +20,7 @@ public protocol Expression {
     /**
      Clones this expression.
      */
-    func copy() -> Expression
+    func copy() -> Self
     
     /**
      Constructs a chord containing all the pitches at offset 0.
@@ -58,6 +58,27 @@ public extension Expression {
      */
     public func chordAt(duration:Duration) -> Chord? {
         return self.slice(from: duration)?.firstChord()
+    }
+}
+
+/**
+ An atomic expression, not composed of smaller expressions.
+ */
+public protocol SimpleExpression: Expression {
+    var duration: Duration { get set }
+}
+
+public extension SimpleExpression {
+    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+        if self.duration < offset {
+            return (self.copy(), nil)
+        } else {
+            var head = self.copy()
+            var tail = self.copy()
+            head.duration = offset
+            tail.duration = self.duration - offset
+            return (head, tail)
+        }
     }
 }
 

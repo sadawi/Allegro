@@ -33,6 +33,15 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(𝅘𝅥-𝅘𝅥𝅮, 𝅘𝅥𝅮)
     }
     
+    func testCopy() {
+        let note = A[4]/16
+        XCTAssertEqual(note, note.copy())
+        
+        let sequence = A[4]/8 + B[4]/8
+        XCTAssertEqual(sequence.duration, sequence.copy().duration)
+        XCTAssertEqual(sequence.firstChord(), sequence.copy().firstChord())
+    }
+    
     func testPitches() {
         XCTAssertEqual(C♯, C.sharp)
         XCTAssertEqual(C♭, B)

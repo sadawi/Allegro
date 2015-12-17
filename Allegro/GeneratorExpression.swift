@@ -18,7 +18,7 @@ public class GeneratorExpression: Expression {
     public func perform(on performer: Performer, completion: (Void -> Void)?) {
     }
     
-    public func copy() -> Expression {
+    public func copy() -> Self {
         return self
     }
     

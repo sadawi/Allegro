@@ -19,7 +19,7 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         self.expressions = expressions
     }
     
-    public init(_ expressions:[Expression]) {
+    public required init(_ expressions:[Expression]) {
         self.expressions = expressions
     }
     
@@ -38,8 +38,8 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         performer.perform(duration: self.duration, completion: completion)
     }
 
-    public func copy() -> Expression {
-        return ParallelExpression(self.expressions)
+    public func copy() -> Self {
+        return self.dynamicType.init(self.expressions)
     }
 
     public func cut(at offset: Duration) -> (Expression?, Expression?) {

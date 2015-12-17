@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Rest: Expression, Equatable {
+public struct Rest: SimpleExpression, Equatable {
     public var duration:Duration
 
     public init(_ duration:Duration) {
@@ -19,20 +19,7 @@ public struct Rest: Expression, Equatable {
         performer.perform(duration: self.duration, completion: completion)
     }
 
-    // TODO: seems repetitive with ChordedNote and Note
-    public func cut(at offset: Duration) -> (Expression?, Expression?) {
-        if self.duration < offset {
-            return (self.copy(), nil)
-        } else {
-            var head = self.copy() as! Rest
-            var tail = self.copy() as! Rest
-            head.duration = offset
-            tail.duration = self.duration - offset
-            return (head, tail)
-        }
-    }
-
-    public func copy() -> Expression {
+    public func copy() -> Rest {
         return Rest(self.duration)
     }
     
