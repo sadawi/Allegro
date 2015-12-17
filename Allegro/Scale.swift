@@ -66,7 +66,7 @@ public class Scale {
         let wrappedDegree = degree % scaleLength // in [0, 6] for major scale, for example
         
         let octaves = floor((Double(degree))/Double(scaleLength));
-        semitones += Interval.octave.semitones * octaves;
+        semitones += Interval.Octave.semitones * octaves;
         
         for var i=0; i<wrappedDegree; i++ {
             let intervalNumber = self.dynamicType.intervals[i]
@@ -87,17 +87,17 @@ public class Scale {
 public class ChromaticScale: Scale {
     public override class var intervals: [Interval] {
         return [
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
-            Interval.halfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
+            Interval.HalfStep,
         ]
     }
 }
@@ -161,36 +161,36 @@ public class DiatonicScale: Scale {
 public class MajorScale: DiatonicScale {
     public override class var intervals: [Interval] {
         return [
-            Interval.wholeStep,
-            Interval.wholeStep,
-            Interval.halfStep,
-            Interval.wholeStep,
-            Interval.wholeStep,
-            Interval.wholeStep,
-            Interval.halfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
         ]
     }
     
     public var relativeMinorScale: NaturalMinorScale {
-        return NaturalMinorScale(self.tonic.transposed(down: Interval.minorThird))
+        return NaturalMinorScale(self.tonic.transposed(down: Interval.MinorThird))
     }
     
 }
 
 public class NaturalMinorScale: DiatonicScale {
     public var relativeMajorScale: MajorScale {
-        return MajorScale(self.tonic.transposed(up: Interval.minorThird))
+        return MajorScale(self.tonic.transposed(up: Interval.MinorThird))
     }
     
     public override class var intervals: [Interval] {
         return [
-            Interval.wholeStep,
-            Interval.halfStep,
-            Interval.wholeStep,
-            Interval.wholeStep,
-            Interval.halfStep,
-            Interval.wholeStep,
-            Interval.wholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
         ]
     }
 }
@@ -198,13 +198,13 @@ public class NaturalMinorScale: DiatonicScale {
 public class HarmonicMinorScale: DiatonicScale {
     public override class var intervals: [Interval] {
         return [
-            Interval.wholeStep,
-            Interval.halfStep,
-            Interval.wholeStep,
-            Interval.wholeStep,
-            Interval.halfStep,
-            Interval.augmentedSecond,
-            Interval.halfStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.WholeStep,
+            Interval.WholeStep,
+            Interval.HalfStep,
+            Interval.AugmentedSecond,
+            Interval.HalfStep,
         ]
     }
 }

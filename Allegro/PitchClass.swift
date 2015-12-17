@@ -30,7 +30,7 @@ public struct PitchClass: Equatable, Transposable, CustomStringConvertible {
      */
     public var semitones:Double {
         get { return _semitones }
-        set { _semitones = fmod(newValue, Interval.octave.semitones) }
+        set { _semitones = fmod(newValue, Interval.Octave.semitones) }
     }
     
     public init(semitones: Double) {
@@ -69,7 +69,7 @@ public struct PitchClass: Equatable, Transposable, CustomStringConvertible {
     }
     
     public func pitch(octave:Int) -> Pitch {
-        return Pitch(semitonesFromBase: Double(octave) * Interval.octave.semitones + Double(self.semitones))
+        return Pitch(semitonesFromBase: Double(octave) * Interval.Octave.semitones + Double(self.semitones))
     }
     
     public var description:String {

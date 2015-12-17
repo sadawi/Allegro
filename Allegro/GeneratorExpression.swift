@@ -63,7 +63,7 @@ public class OctaveSampler: ContextGeneratorExpression {
     
     public override func perform(on performer: Performer, completion: (Void -> Void)?) {
         if let chord = self.context.chordAt(self.offset) {
-            let note = chord.transposed(down: Interval.octave).note(Duration.Quarter)
+            let note = chord.transposed(down: Interval.Octave).note(Duration.Quarter)
             note.perform(on: performer, completion: nil)
         }
         self.offset = self.offset + self.period

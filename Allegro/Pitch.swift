@@ -20,7 +20,7 @@ public struct Pitch: Transposable, Equatable, CustomStringConvertible {
     // MARK: -
     
     public var octave:Int {
-        return Int(floor(self.semitonesFromBase / Double(Interval.octave.semitones)))
+        return Int(floor(self.semitonesFromBase / Double(Interval.Octave.semitones)))
     }
     
     public var pitchClass:PitchClass {
