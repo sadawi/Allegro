@@ -90,8 +90,8 @@ let phrase = C[4]/4 + C[4]/4 + G[4]/4 + G[4]/4
 You can also use `*`, but be careful with precedence:
 
 ```swift
-let phrase = 2 * (C[4]/4) + 2 * (G[4]/4)
 let phrase = C[4]/4 * 2 + G[4]/4 * 2
+let phrase = 2 * (C[4]/4) + 2 * (G[4]/4)
 ```
 
 The `|` operator combines expressions into ParallelExpressions:
