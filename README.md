@@ -80,7 +80,6 @@ Any musical object that conforms to the `Expression` protocol has a duration, an
 
 * `SequenceExpression`: All subexpressions are performed in sequence, one after the other.
 * `ParallelExpression`: Each subexpression should start playing at the same time.
-* `PolyphonicExpression`: Each subexpression has its own time index at which it should start playing.
 
 The `+` operator combines expressions into SequenceExpressions:
 
