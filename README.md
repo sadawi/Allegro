@@ -93,3 +93,13 @@ The `|` operator combines expressions into ParallelExpressions:
 ```swift
 let music = (A[4]/4 + B[4]/4) | A[2]/2
 ```
+
+## Performance
+
+`Performer` objects know how to realize any `Expression`.  Currently, there's only `SamplerInstrument`, which plays MIDI notes using a Soundfont that you specify.
+
+```swift
+let piano = SamplerInstrument(filename: "AJH_Piano", patchNumber: 0)!
+let music = A[4]/4 + B[4]/4 + C[5]/4 + D[5]/4
+piano.play(music)
+```
