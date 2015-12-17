@@ -14,7 +14,7 @@ import Foundation
  These are equal tempered pitches, defined as a number of semitones from an arbitrary base (say, C0).
  */
 
-public struct Pitch: Transposable, Equatable {
+public struct Pitch: Transposable, Equatable, CustomStringConvertible {
     public var semitonesFromBase:Double = 0
     
     // MARK: -
@@ -42,6 +42,10 @@ public struct Pitch: Transposable, Equatable {
     
     public func semitonesTo(pitch:Pitch) -> Double {
         return pitch.semitonesFromBase - self.semitonesFromBase
+    }
+    
+    public var description:String {
+        return "\(self.pitchClass)\(self.octave)"
     }
     
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Duration: Equatable, Comparable {
+public struct Duration: Equatable, Comparable, CustomStringConvertible {
     /**
      Arbitrary units representing the length in time.
      */
@@ -44,6 +44,18 @@ public struct Duration: Equatable, Comparable {
     
     public var rest: Rest {
         return Rest(self)
+    }
+    
+    public var description:String {
+        switch self.length {
+        case 𝅝.length: return "𝅝"
+        case 𝅗𝅥.length: return "𝅗𝅥"
+        case 𝅘𝅥.length: return "𝅘𝅥"
+        case 𝅘𝅥𝅮.length: return "𝅘𝅥𝅮"
+        case 𝅘𝅥𝅯.length: return "𝅘𝅥𝅯"
+        case 𝅘𝅥𝅰.length: return "𝅘𝅥𝅰"
+        default: return "(\(self.length))"
+        }
     }
 }
 

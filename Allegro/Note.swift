@@ -7,7 +7,7 @@
 //
 
 
-public struct Note: Sounded, Expression, Transposable, Equatable {
+public struct Note: Sounded, Expression, Transposable, Equatable, CustomStringConvertible {
     public var pitch:Pitch
     public var duration:Duration
     public var loudness:Loudness = 𝆐𝆑
@@ -81,6 +81,10 @@ public struct Note: Sounded, Expression, Transposable, Equatable {
     
     public func copy() -> Expression {
         return Note(pitch: self.pitch, duration: self.duration, loudness: self.loudness)
+    }
+    
+    public var description:String {
+        return "\(self.pitch)-\(self.duration)"
     }
 }
 

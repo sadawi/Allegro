@@ -43,12 +43,21 @@ class ViewController: DataSourceViewController {
                     self.play(music)
             }
 
+//            section <<< TableViewItem<TableCell> { cell in
+//                cell.textLabel?.text = "Constant generator"
+//                }.onTap { _ in
+//                    let generator = NoteGeneratorExpression(note: A[4]/4)
+//                    self.play(generator)
+//            }
+            
             section <<< TableViewItem<TableCell> { cell in
-                cell.textLabel?.text = "Constant generator"
+                cell.textLabel?.text = "Generator"
                 }.onTap { _ in
-                    let generator = NoteGeneratorExpression(note: A[4]/4)
-                    self.play(generator)
+                    let melody = A[4]/4 + G[4]/4 + B[4]/4 + A[4]/4 + G[4]/4 + B[4]/4
+                    let generator = OctaveSampler(context: melody)
+                    self.play(melody | generator)
             }
+
             
             section <<< TableViewItem<TableCell> { cell in
                 cell.textLabel?.text = "Dynamics"

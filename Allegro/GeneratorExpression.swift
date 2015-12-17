@@ -9,27 +9,40 @@
 import Foundation
 
 
-//public class GeneratorExpression: Expression {
-//
-//    public var duration:Duration {
-//        return Duration.Infinite
-//    }
-//    
-//    public func perform(on performer: Performer, completion: (Void -> Void)?) {
-//    }
-//}
-//
-//public class ContextGeneratorExpression: GeneratorExpression {
-//    public var context:Expression
-//    
-//    public init(context:Expression) {
-//        self.context = context
-//    }
-//    
-//    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
-//    }
-//}
-//
+public class GeneratorExpression: Expression {
+
+    public var duration:Duration {
+        return Duration.Infinite
+    }
+    
+    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    }
+    
+    public func copy() -> Expression {
+        return self
+    }
+    
+    public func firstChord() -> Chord? {
+        return nil
+    }
+    
+    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+        return (nil, nil)
+    }
+}
+
+public class ContextGeneratorExpression: GeneratorExpression {
+    public var context:Expression
+    
+    public init(context:Expression) {
+        self.context = context
+    }
+    
+    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
+        self.context.perform(on: performer, completion: completion)
+    }
+}
+
 //public class NoteGeneratorExpression: GeneratorExpression {
 //    public var note:Note
 //
@@ -43,22 +56,21 @@ import Foundation
 //        }
 //    }
 //}
-//
-//public class Sampler: ContextGeneratorExpression {
-//    public var period:Duration = Duration.Whole
-//    public var offset:Duration = Duration.Zero
-//    
-//    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
-//        let chord = self.context.chordAt(self.offset)
-//        let note = chord.note(Duration.Quarter)
-//        
-//        note.perform(on: performer, completion: nil)
-//        
-//        self.offset = self.offset + self.period
-//
-//        // Wait, then start again
-//        performer.perform(duration: self.period) {
-//            self.perform(on: performer, completion: nil)
-//        }
-//    }
-//}
+
+public class OctaveSampler: ContextGeneratorExpression {
+    public var period:Duration = Duration.Half
+    public var offset:Duration = Duration.Zero
+    
+    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
+        if let chord = self.context.chordAt(self.offset) {
+            let note = chord.transposed(down: Interval.octave).note(Duration.Quarter)
+            note.perform(on: performer, completion: nil)
+        }
+        self.offset = self.offset + self.period
+
+        // Wait, then start again
+        performer.perform(duration: self.period) {
+            self.perform(on: performer, completion: nil)
+        }
+    }
+}

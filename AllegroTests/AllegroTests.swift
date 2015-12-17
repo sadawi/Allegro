@@ -29,6 +29,8 @@ class AllegroTests: XCTestCase {
         XCTAssertEqual(3 * 𝅘𝅥𝅮.triplet, 𝅘𝅥)
         XCTAssertEqual(𝅘𝅥.tuplet(3), 𝅘𝅥.triplet)
         XCTAssertEqual(5*𝅘𝅥.tuplet(5)!, 4*𝅘𝅥)
+        
+        XCTAssertEqual(𝅘𝅥-𝅘𝅥𝅮, 𝅘𝅥𝅮)
     }
     
     func testPitches() {
@@ -112,6 +114,18 @@ class AllegroTests: XCTestCase {
         let fast = Tempo(120, 𝅘𝅥)
         XCTAssertEqual(fast.timeIntervalForDuration(𝅘𝅥), 0.5)
     }
+  
+    func testCut() {
+        let phrase = A[4]/4 + C[4]/4 + D[4]/4 + E[4]/4
+        let (head, tail) = phrase.cut(at: Duration.Half)
+
+        XCTAssertNotNil(head)
+        XCTAssertNotNil(tail)
+        
+        XCTAssertEqual(head!.firstChord()!.pitches, [ A[4] ])
+        
+        XCTAssertEqual(tail!.firstChord()!.pitches, [ D[4] ])
+    }
     
     func testSlices() {
         let note = A[4]/2
@@ -127,13 +141,18 @@ class AllegroTests: XCTestCase {
         let phrase = A[4]/4 + C[4]/4
         let slice = phrase.slice(to: Duration.Eighth) as? SequenceExpression
         XCTAssertNotNil(slice)
-        
         let firstNote = slice?.expressions[0] as? Note
         XCTAssertEqual(firstNote, A[4]/8)
         
+        let chordOne = phrase.chordAt(Duration.Zero)
+        XCTAssertNotNil(chordOne)
+        XCTAssertEqual(chordOne!.pitches, [ A[4] ])
+        let chordTwo = phrase.chordAt(Duration.Quarter)
+        XCTAssertNotNil(chordTwo)
+        XCTAssertEqual(chordTwo!.pitches, [ C[4] ])
+        
         let parallel = A[4]/4 | C[4]/4
         let firstChord = parallel.firstChord()
-        
         XCTAssertEqual(firstChord!, A[4] | C[4])
     }
 }

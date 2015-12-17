@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SequenceExpression: Expression, ArrayLiteralConvertible {
+public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStringConvertible {
     var expressions:[Expression] = []
     
     var head:Expression? {
@@ -91,9 +91,9 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
             var remaining = offset
             for expression in self.expressions {
                 let expression = expression.copy()
-                let length = expression.duration
-                if length <= remaining {
+                if expression.duration <= remaining {
                     head?.add(expression)
+                    remaining = remaining - expression.duration
                 } else if remaining.length > 0 {
                     let (newHead, newTail) = expression.cut(at: remaining)
                     if let newHead = newHead {
@@ -114,6 +114,11 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible {
         
         return (head, tail)
     }
+    
+    public var description:String {
+        return self.expressions.map { "(\($0))" }.joinWithSeparator(" ")
+    }
+
 }
 
 public func +(left:Expression, right:Expression) -> SequenceExpression {
