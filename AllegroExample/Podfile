@@ -1,4 +1,4 @@
 use_frameworks!
 
-pod 'Allegro', :path => '~/Dropbox/projects/_lib/iOS/Allegro'
+pod 'Allegro', :path => '..'
 pod 'PrimarySource', :git => 'git@github.com:sadawi/PrimarySource', :tag => '0.1.0'

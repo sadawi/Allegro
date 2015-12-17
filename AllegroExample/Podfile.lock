@@ -3,12 +3,12 @@ PODS:
   - PrimarySource (0.1.0)
 
 DEPENDENCIES:
-  - Allegro (from `~/Dropbox/projects/_lib/iOS/Allegro`)
+  - Allegro (from `..`)
   - PrimarySource (from `git@github.com:sadawi/PrimarySource`, tag `0.1.0`)
 
 EXTERNAL SOURCES:
   Allegro:
-    :path: "~/Dropbox/projects/_lib/iOS/Allegro"
+    :path: ".."
   PrimarySource:
     :git: git@github.com:sadawi/PrimarySource
     :tag: 0.1.0
