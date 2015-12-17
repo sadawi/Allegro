@@ -81,11 +81,12 @@ Any musical object that conforms to the `Expression` protocol has a duration, an
 * `SequenceExpression`: All subexpressions are performed in sequence, one after the other.
 * `ParallelExpression`: Each subexpression should start playing at the same time.
 
-The `+` operator combines expressions into SequenceExpressions (and you can also use `*`):
+The `+` operator combines expressions into SequenceExpressions.  You can also use `*`, but be careful with precedence:
 
 ```swift
 let phrase = C[4]/4 + C[4]/4 + G[4]/4 + G[4]/4
-let repeatedNote = 10 * C[4]/4
+let samePhrase = 2 * (C[4]/4) + 2 * (G[4]/4)
+let samePhrase = C[4]/4 * 2 + G[4]/4 * 2
 ```
 
 The `|` operator combines expressions into ParallelExpressions:
