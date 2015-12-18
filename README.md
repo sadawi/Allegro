@@ -111,7 +111,3 @@ piano.play(music)
 ```
 
 A `SamplerInstrument` has a `Tempo` property, which defaults to 100 quarter notes per minute.
-
-## Known issues
-
-* Need to revamp the timing system.  `dispatch_after` isn't very accurate.  Stopping and then starting playback isn't reliable.
