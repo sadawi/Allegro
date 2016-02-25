@@ -12,9 +12,9 @@ import Foundation
  An Expression containing subexpressions that are realized in timewise sequence, one after the other.
  */
 public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStringConvertible {
-    var expressions:[Expression] = []
+    public var expressions:[Expression] = []
     
-    var head:Expression? {
+    public var head:Expression? {
         if self.expressions.count > 0 {
             return self.expressions[0]
         } else {
@@ -22,7 +22,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         }
     }
     
-    var tail:SequenceExpression? {
+    public var tail:SequenceExpression? {
         if self.expressions.count > 1 {
             let a = self.expressions
             return SequenceExpression(Array(a[1..<a.count]))

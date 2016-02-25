@@ -13,7 +13,7 @@ import Foundation
  Its duration is considered to be equal to that of its longest subexpression.
  */
 public class ParallelExpression: Expression, ArrayLiteralConvertible {
-    var expressions:[Expression] = []
+    public var expressions:[Expression] = []
 
     public required init(arrayLiteral expressions: Expression...) {
         self.expressions = expressions
