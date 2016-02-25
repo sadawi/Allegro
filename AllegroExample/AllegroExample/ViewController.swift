@@ -32,7 +32,7 @@ class ViewController: DataSourceViewController {
                 cell.textLabel?.text = "Melody and chords"
                 }.onTap { _ in
                     let melody = SequenceExpression(C.naturalMinorScale.pitchesStartingInOctave(4).map { $0/4 })
-                    let chords = SequenceExpression([C.naturalMinorScale.triadFromDegree(.Tonic, octave: 3) / 1])
+                    let chords = SequenceExpression([C.naturalMinorScale.triadFromDegree(.Tonic, octave: 3) / 1, C.naturalMinorScale.triadFromDegree(.Dominant, octave: 3) / 1])
                     self.play(melody|chords)
             }
             
@@ -62,7 +62,7 @@ class ViewController: DataSourceViewController {
             section <<< TableViewItem<TableCell> { cell in
                 cell.textLabel?.text = "Dynamics"
                 }.onTap { _ in
-                    let music = (A[4]/4).loudness(Loudness.Forte) + (A[4]/4).loudness(Loudness.MezzoForte) + (A[4]/4).loudness(Loudness.Forte)
+                    let music = (A[4]/4).loudness(𝆑) + (A[4]/4).loudness(𝆐𝆏) + (A[4]/4).loudness(𝆑𝆑𝆑)
                     self.play(music)
             }
 
