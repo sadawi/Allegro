@@ -68,7 +68,7 @@ public class Scale {
         let octaves = floor((Double(degree))/Double(scaleLength));
         semitones += Interval.Octave.semitones * octaves;
         
-        for var i=0; i<wrappedDegree; i++ {
+        for i in 0..<wrappedDegree {
             let intervalNumber = self.dynamicType.intervals[i]
             semitones += intervalNumber.semitones
         }
@@ -87,17 +87,17 @@ public class Scale {
 public class ChromaticScale: Scale {
     public override class var intervals: [Interval] {
         return [
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
-            Interval.HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
+            .HalfStep,
         ]
     }
 }
@@ -161,13 +161,13 @@ public class DiatonicScale: Scale {
 public class MajorScale: DiatonicScale {
     public override class var intervals: [Interval] {
         return [
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
+            .WholeStep,
+            .WholeStep,
+            .HalfStep,
+            .WholeStep,
+            .WholeStep,
+            .WholeStep,
+            .HalfStep,
         ]
     }
     
@@ -184,13 +184,13 @@ public class NaturalMinorScale: DiatonicScale {
     
     public override class var intervals: [Interval] {
         return [
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
+            .WholeStep,
+            .HalfStep,
+            .WholeStep,
+            .WholeStep,
+            .HalfStep,
+            .WholeStep,
+            .WholeStep,
         ]
     }
 }
@@ -198,13 +198,13 @@ public class NaturalMinorScale: DiatonicScale {
 public class HarmonicMinorScale: DiatonicScale {
     public override class var intervals: [Interval] {
         return [
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.WholeStep,
-            Interval.WholeStep,
-            Interval.HalfStep,
-            Interval.AugmentedSecond,
-            Interval.HalfStep,
+            .WholeStep,
+            .HalfStep,
+            .WholeStep,
+            .WholeStep,
+            .HalfStep,
+            .AugmentedSecond,
+            .HalfStep,
         ]
     }
 }
