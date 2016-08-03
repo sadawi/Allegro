@@ -12,14 +12,14 @@ import Foundation
 public struct Loudness {
     public var amount:Double = 1
     
-    public static let Pianississimo = Loudness(amount: 0.0625)
-    public static let Pianissimo = Loudness(amount: 0.125)
-    public static let Piano = Loudness(amount: 0.25)
-    public static let MezzoPiano = Loudness(amount: 0.5)
-    public static let MezzoForte = Loudness(amount: 0.75)
-    public static let Forte = Loudness(amount: 1)
-    public static let Fortissimo = Loudness(amount: 1.5)
-    public static let Fortississimo = Loudness(amount: 2)
+    public static let Pianississimo     = Loudness(amount: 0.0625)
+    public static let Pianissimo        = Loudness(amount: 0.125)
+    public static let Piano             = Loudness(amount: 0.25)
+    public static let MezzoPiano        = Loudness(amount: 0.5)
+    public static let MezzoForte        = Loudness(amount: 0.75)
+    public static let Forte             = Loudness(amount: 1)
+    public static let Fortissimo        = Loudness(amount: 1.5)
+    public static let Fortississimo     = Loudness(amount: 2)
 }
 
 public let 𝆏𝆏𝆏 = Loudness.Pianississimo

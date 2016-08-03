@@ -97,10 +97,10 @@ public func ==(left:PitchClass, right:PitchClass) -> Bool {
 }
 
 /**
-
-Public constants for the natural pitch classes.  Accidentals can be written as C.sharp, etc.
-
-*/
+ 
+ Public constants for the natural pitch classes.  Accidentals can be written as C.sharp, etc.
+ 
+ */
 
 public let C        = PitchClass(semitones: 0)
 public let D        = PitchClass(semitones: 2)
