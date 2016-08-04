@@ -8,13 +8,12 @@
 
 import Foundation
 
-
 /**
 A set of pitches sounded simultaneously.
 If you want a chord with duration, use the ChordedNote class.
 */
 
-public struct Chord: Equatable, Transposable {
+public struct Chord: Hashable, Transposable {
     public var pitches:[Pitch]
     
     public init(_ pitches:[Pitch]) {
@@ -30,6 +29,14 @@ public struct Chord: Equatable, Transposable {
 
     public func transposed(semitones semitones: Double) -> Chord {
         return Chord(self.pitches.map{ $0.transposed(semitones: semitones) })
+    }
+    
+    public var hashValue: Int {
+        var result = self.pitches.count
+        for pitch in self.pitches {
+            result += pitch.hashValue * 31
+        }
+        return result
     }
 }
 

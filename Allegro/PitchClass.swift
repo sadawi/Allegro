@@ -22,7 +22,7 @@ public postfix func ♭(pitchClass:PitchClass) -> PitchClass {
 /**
  The chroma of a pitch, regardless of octave.  C4 and C0 both have a pitchClass of C.
  */
-public struct PitchClass: Equatable, Transposable, CustomStringConvertible {
+public struct PitchClass: Hashable, Transposable, CustomStringConvertible {
     private var _semitones: Double = 0
     
     /**
@@ -88,6 +88,10 @@ public struct PitchClass: Equatable, Transposable, CustomStringConvertible {
         case B.semitones: return "B"
         default: return "\(self.semitones)"
         }
+    }
+    
+    public var hashValue: Int {
+        return self.semitones.hashValue
     }
     
 }
