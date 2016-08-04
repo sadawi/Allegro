@@ -40,7 +40,7 @@ public struct Pitch: Transposable, Equatable, CustomStringConvertible {
         return Note(pitch:self, duration:duration)
     }
     
-    public func semitonesTo(pitch:Pitch) -> Double {
+    public func semitones(to pitch:Pitch) -> Double {
         return pitch.semitonesFromBase - self.semitonesFromBase
     }
     

@@ -16,7 +16,7 @@ struct MIDI {
 
 extension Pitch {
     public var MIDINumber:UInt8 {
-        return UInt8(C[0].semitonesTo(self)) + MIDI.C0MIDINumber
+        return UInt8(C[0].semitones(to: self)) + MIDI.C0MIDINumber
     }
 }
 
