@@ -20,10 +20,10 @@ public class Scale {
     }
     
     public func pitchClasses() -> [PitchClass] {
-        return self.pitchesStartingInOctave(0).map { $0.pitchClass }
+        return self.pitches(startingInOctave: 0).map { $0.pitchClass }
     }
     
-    public func pitchesStartingInOctave(octave:Int) -> [Pitch] {
+    public func pitches(startingInOctave octave:Int) -> [Pitch] {
         var pitch = self.tonic[octave]
         var pitches:[Pitch] = []
         for interval in self.dynamicType.intervals {
@@ -33,8 +33,8 @@ public class Scale {
         return pitches
     }
     
-    public func pitchesStartingWithPitch(pitch:Pitch) -> [Pitch] {
-        if let index = self.indexOfPitchClass(pitch.pitchClass) {
+    public func pitches(startingWith pitch:Pitch) -> [Pitch] {
+        if let index = self.indexOf(pitch.pitchClass) {
             var pitch = pitch
             var pitches:[Pitch] = []
             let intervals = self.dynamicType.intervals
@@ -75,12 +75,12 @@ public class Scale {
         return Interval(semitones: semitones);
     }
     
-    public func indexOfPitchClass(pitchClass:PitchClass) -> Int? {
+    public func indexOf(pitchClass:PitchClass) -> Int? {
         return self.pitchClasses().indexOf(pitchClass)
     }
     
-    public func containsPitchClass(pitchClass: PitchClass) -> Bool {
-        return self.indexOfPitchClass(pitchClass) != nil
+    public func contains(pitchClass: PitchClass) -> Bool {
+        return self.indexOf(pitchClass) != nil
     }
 }
 
@@ -122,21 +122,21 @@ public class DiatonicScale: Scale {
     public var submediant:  PitchClass { return self[DiatonicScaleDegree.Submediant] }
     public var leadingTone: PitchClass { return self[DiatonicScaleDegree.LeadingTone] }
     
-    public func degreeOfPitch(pitch: Pitch) -> DiatonicScaleDegree? {
-        if let index = self.indexOfPitchClass(pitch.pitchClass) {
+    public func degree(of pitch: Pitch) -> DiatonicScaleDegree? {
+        if let index = self.indexOf(pitch.pitchClass) {
             return DiatonicScaleDegree(rawValue: index+1)
         } else {
             return nil
         }
     }
     
-    public func triadFromDegree(degree: DiatonicScaleDegree, octave:Int) -> Chord {
-        let pitch = self.pitchClassForDegree(degree)[octave]
-        return self.triadFromPitch(pitch)!
+    public func triad(from degree: DiatonicScaleDegree, octave:Int) -> Chord {
+        let pitch = self.pitchClass(of: degree)[octave]
+        return self.triad(from: pitch)!
     }
     
-    public func triadFromPitch(pitch: Pitch) -> Chord? {
-        let pitches = self.pitchesStartingWithPitch(pitch)
+    public func triad(from pitch: Pitch) -> Chord? {
+        let pitches = self.pitches(startingWith: pitch)
         if pitches.count >= 5 {
             return Chord([pitches[0], pitches[2], pitches[4]])
         } else {
@@ -144,16 +144,16 @@ public class DiatonicScale: Scale {
         }
     }
     
-    public func pitchClassForDegree(degree:DiatonicScaleDegree) -> PitchClass {
+    public func pitchClass(of degree:DiatonicScaleDegree) -> PitchClass {
         return self.pitchClassForDegree(degree.rawValue - 1)
     }
     
     public subscript(degree:DiatonicScaleDegree) -> PitchClass {
-        return self.pitchClassForDegree(degree)
+        return self.pitchClass(of: degree)
     }
     
-    public func triadsStartingInOctave(octave: Int) -> [Chord] {
-        return self.pitchesStartingInOctave(octave).map { self.triadFromPitch($0)! }
+    public func triads(startingInOctave octave: Int) -> [Chord] {
+        return self.pitches(startingInOctave: octave).map { self.triad(from: $0)! }
     }
     
 }

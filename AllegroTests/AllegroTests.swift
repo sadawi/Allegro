@@ -78,13 +78,13 @@ class AllegroTests: XCTestCase {
         let desiredPitchClasses = [D, E, F♯, G, A, B, C♯]
         XCTAssertEqual(pitchClasses, desiredPitchClasses)
         
-        let pitches = scale.pitchesStartingWithPitch(D[4])
+        let pitches = scale.pitches(startingWith: D[4])
         XCTAssertEqual(pitches[0], D[4])
         
-        let octave4 = scale.pitchesStartingInOctave(4)
+        let octave4 = scale.pitches(startingInOctave: 4)
         XCTAssertEqual(octave4[0], D[4])
         
-        let triad = scale.triadFromPitch(D[4])
+        let triad = scale.triad(from: D[4])
         XCTAssertNotNil(triad)
         XCTAssertEqual(triad!.pitches, [D[4], F.sharp[4], A[4]])
         
@@ -125,13 +125,13 @@ class AllegroTests: XCTestCase {
     
     func testTempo() {
         let defaultTempo = Tempo(60)
-        XCTAssertEqual(defaultTempo.timeIntervalForDuration(𝅘𝅥), 1.0)
+        XCTAssertEqual(defaultTempo.timeInterval(for: 𝅘𝅥), 1.0)
         
         let slow = Tempo(60, 𝅘𝅥)
-        XCTAssertEqual(slow.timeIntervalForDuration(𝅘𝅥), 1.0)
+        XCTAssertEqual(slow.timeInterval(for: 𝅘𝅥), 1.0)
 
         let fast = Tempo(120, 𝅘𝅥)
-        XCTAssertEqual(fast.timeIntervalForDuration(𝅘𝅥), 0.5)
+        XCTAssertEqual(fast.timeInterval(for: 𝅘𝅥), 0.5)
     }
   
     func testCut() {
