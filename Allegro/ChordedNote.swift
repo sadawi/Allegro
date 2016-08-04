@@ -22,7 +22,7 @@ public struct ChordedNote: SimpleExpression {
     // MARK: - To other data types
     
     public var arpeggio: SequenceExpression {
-        let notes:[Expression] = chord.pitches.map { Note(pitch: $0, duration: duration / chord.pitches.count) }
+        let notes:[Expression] = chord.pitches.map { Note(pitch: $0, duration: duration / chord.pitches.count, loudness: self.loudness) }
         return SequenceExpression(notes)
     }
 
