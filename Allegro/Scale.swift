@@ -110,6 +110,8 @@ public enum DiatonicScaleDegree: Int {
     case Dominant       = 5
     case Submediant     = 6
     case LeadingTone    = 7
+    
+    public static let All:[DiatonicScaleDegree] = [.Tonic, .Supertonic, .Mediant, .Subdominant, .Dominant, .Submediant, .LeadingTone]
 }
 
 
