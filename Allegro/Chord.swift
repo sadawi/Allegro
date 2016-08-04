@@ -14,7 +14,7 @@ A set of pitches sounded simultaneously.
 If you want a chord with duration, use the ChordedNote class.
 */
 
-public struct Chord:Equatable, Transposable {
+public struct Chord: Equatable, Transposable {
     public var pitches:[Pitch]
     
     public init(_ pitches:[Pitch]) {
@@ -31,7 +31,6 @@ public struct Chord:Equatable, Transposable {
     public func transposed(semitones semitones: Double) -> Chord {
         return Chord(self.pitches.map{ $0.transposed(semitones: semitones) })
     }
-    
 }
 
 public func ==(left:Chord, right:Chord) -> Bool {
