@@ -43,7 +43,7 @@ public class Instrument: Performer {
     public func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?) {
         guard self.state != .Stopped else { return }
         
-        let interval = self.tempo.timeIntervalForDuration(duration)
+        let interval = self.tempo.timeInterval(for: duration)
         if let pitch = pitch, loudness = loudness {
             self.startPlayingPitch(pitch, loudness: loudness)
             

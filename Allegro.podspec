@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "Allegro"
-    s.version          = "0.1.0"
+    s.version          = "0.2.0"
     s.summary          = "Swift music theory"
     s.homepage         = "https://github.com/sadawi/Allegro"
     s.license          = 'MIT'

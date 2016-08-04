@@ -31,8 +31,8 @@ class ViewController: DataSourceViewController {
             section <<< TableViewItem<TableCell> { cell in
                 cell.textLabel?.text = "Melody and chords"
                 }.onTap { _ in
-                    let melody = SequenceExpression(C.naturalMinorScale.pitchesStartingInOctave(4).map { $0/4 })
-                    let chords = SequenceExpression([C.naturalMinorScale.triadFromDegree(.Tonic, octave: 3) / 1, C.naturalMinorScale.triadFromDegree(.Dominant, octave: 3) / 1])
+                    let melody = SequenceExpression(C.naturalMinorScale.pitches(startingInOctave: 4).map { $0/4 })
+                    let chords = SequenceExpression([C.naturalMinorScale.triad(from: .Tonic, octave: 3) / 1, C.naturalMinorScale.triad(from: .Dominant, octave: 3) / 1])
                     self.play(melody|chords)
             }
             

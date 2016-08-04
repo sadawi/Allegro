@@ -24,20 +24,20 @@ public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
         self.semitones = Double(value)
     }
 
-    static let Unison: Interval             = 0
-    static let HalfStep: Interval           = 1
-    static let WholeStep: Interval          = 2
-    static let AugmentedSecond: Interval    = 3
-    static let MinorThird: Interval         = 3
-    static let MajorThird: Interval         = 4
-    static let PerfectFourth: Interval      = 5
-    static let AugmentedFourth: Interval    = 6
-    static let PerfectFifth: Interval       = 7
-    static let AugmentedFifth: Interval     = 8
-    static let MajorSixth: Interval         = 9
-    static let MinorSeventh: Interval       = 10
-    static let MajorSeventh: Interval       = 11
-    static let Octave: Interval             = 12
+    public static let Unison: Interval             = 0
+    public static let HalfStep: Interval           = 1
+    public static let WholeStep: Interval          = 2
+    public static let AugmentedSecond: Interval    = 3
+    public static let MinorThird: Interval         = 3
+    public static let MajorThird: Interval         = 4
+    public static let PerfectFourth: Interval      = 5
+    public static let AugmentedFourth: Interval    = 6
+    public static let PerfectFifth: Interval       = 7
+    public static let AugmentedFifth: Interval     = 8
+    public static let MajorSixth: Interval         = 9
+    public static let MinorSeventh: Interval       = 10
+    public static let MajorSeventh: Interval       = 11
+    public static let Octave: Interval             = 12
 }
 
 public enum IntervalQuality {
