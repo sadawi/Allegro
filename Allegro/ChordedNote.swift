@@ -26,7 +26,7 @@ public struct ChordedNote: SimpleExpression {
         return SequenceExpression(notes)
     }
 
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    public func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         for pitch in self.chord.pitches {
             performer.perform(pitch: pitch, loudness: self.loudness, duration: self.duration, completion: nil)
         }

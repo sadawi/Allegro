@@ -30,7 +30,7 @@ public protocol Expression {
     /**
      Recursively realizes the expression on some Performer instance.
      */
-    func perform(on performer: Performer, completion: (Void -> Void)?)
+    func perform(on performer: Performer, completion: ((Void) -> Void)?)
     
     /**
      Divides an expression into two expressions at the specified offset.  Might result in chopping a note into two notes of smaller durations.
@@ -39,7 +39,7 @@ public protocol Expression {
 }
 
 public extension Expression {
-    public func slice(from from:Duration, to:Duration) -> Expression? {
+    public func slice(from:Duration, to:Duration) -> Expression? {
         return self.slice(to: to)?.slice(from: from)
     }
     
@@ -56,7 +56,7 @@ public extension Expression {
     /**
      Constructs a chord from the simultaneous pitches at a given offset.
      */
-    public func chordAt(duration:Duration) -> Chord? {
+    public func chordAt(_ duration:Duration) -> Chord? {
         return self.slice(from: duration)?.firstChord()
     }
 }

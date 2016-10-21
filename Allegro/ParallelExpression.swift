@@ -12,8 +12,8 @@ import Foundation
  An Expression containing subexpressions that are realized simultaneously.
  Its duration is considered to be equal to that of its longest subexpression.
  */
-public class ParallelExpression: Expression, ArrayLiteralConvertible {
-    public var expressions:[Expression] = []
+open class ParallelExpression: Expression, ExpressibleByArrayLiteral {
+    open var expressions:[Expression] = []
 
     public required init(arrayLiteral expressions: Expression...) {
         self.expressions = expressions
@@ -23,7 +23,7 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         self.expressions = expressions
     }
     
-    public var duration: Duration {
+    open var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
             result = max(result, expression.duration.length)
@@ -31,18 +31,18 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         return Duration(length: result)
     }
     
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    open func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         for expression in self.expressions {
             expression.perform(on: performer, completion: nil)
         }
         performer.perform(duration: self.duration, completion: completion)
     }
 
-    public func copy() -> Self {
-        return self.dynamicType.init(self.expressions)
+    open func copy() -> Self {
+        return type(of: self).init(self.expressions)
     }
 
-    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+    open func cut(at offset: Duration) -> (Expression?, Expression?) {
         var heads:[Expression] = []
         var tails:[Expression] = []
         
@@ -59,7 +59,7 @@ public class ParallelExpression: Expression, ArrayLiteralConvertible {
         return (ParallelExpression(heads), ParallelExpression(tails))
     }
     
-    public func firstChord() -> Chord? {
+    open func firstChord() -> Chord? {
         let chords:[Chord] = self.expressions.map { $0.firstChord() }.flatMap { $0 }
         var result = Chord([])
         for chord in chords {

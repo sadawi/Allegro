@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
+public struct Interval: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
     public var semitones: Double
     public var quality: IntervalQuality?
     
@@ -41,9 +41,9 @@ public struct Interval: FloatLiteralConvertible, IntegerLiteralConvertible {
 }
 
 public enum IntervalQuality {
-    case Perfect
-    case Major
-    case Minor
-    case Augmented
-    case Diminished
+    case perfect
+    case major
+    case minor
+    case augmented
+    case diminished
 }

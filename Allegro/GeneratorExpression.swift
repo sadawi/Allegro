@@ -9,36 +9,36 @@
 import Foundation
 
 
-public class GeneratorExpression: Expression {
+open class GeneratorExpression: Expression {
 
-    public var duration:Duration {
+    open var duration:Duration {
         return Duration.Infinite
     }
     
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    open func perform(on performer: Performer, completion: ((Void) -> Void)?) {
     }
     
-    public func copy() -> Self {
+    open func copy() -> Self {
         return self
     }
     
-    public func firstChord() -> Chord? {
+    open func firstChord() -> Chord? {
         return nil
     }
     
-    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+    open func cut(at offset: Duration) -> (Expression?, Expression?) {
         return (nil, nil)
     }
 }
 
-public class ContextGeneratorExpression: GeneratorExpression {
-    public var context:Expression
+open class ContextGeneratorExpression: GeneratorExpression {
+    open var context:Expression
     
     public init(context:Expression) {
         self.context = context
     }
     
-    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
+    open override func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         self.context.perform(on: performer, completion: completion)
     }
 }
@@ -57,11 +57,11 @@ public class ContextGeneratorExpression: GeneratorExpression {
 //    }
 //}
 
-public class OctaveSampler: ContextGeneratorExpression {
-    public var period:Duration = Duration.Half
-    public var offset:Duration = Duration.Zero
+open class OctaveSampler: ContextGeneratorExpression {
+    open var period:Duration = Duration.Half
+    open var offset:Duration = Duration.Zero
     
-    public override func perform(on performer: Performer, completion: (Void -> Void)?) {
+    open override func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         if let chord = self.context.chordAt(self.offset) {
             let note = chord.transposed(down: Interval.Octave).note(Duration.Quarter)
             note.perform(on: performer, completion: nil)

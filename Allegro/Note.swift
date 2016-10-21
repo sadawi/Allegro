@@ -27,13 +27,13 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
     
     var dotted:Note { return Note(pitch: self.pitch, duration: self.duration.dotted) }
 
-    public func transposed(semitones semitones:Double) -> Note {
+    public func transposed(semitones:Double) -> Note {
         return Note(pitch: self.pitch.transposed(semitones: semitones), duration: self.duration)
     }
     
     // MARK: - To other data types
     
-    public func tremolo(duration:Duration = Duration.ThirtySecond) -> SequenceExpression {
+    public func tremolo(_ duration:Duration = Duration.ThirtySecond) -> SequenceExpression {
         let count = Int(self.duration.length / duration.length)
         let result = SequenceExpression()
         for _ in 0..<count {
@@ -42,11 +42,11 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
         return result
     }
     
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    public func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         performer.perform(pitch: self.pitch, loudness: self.loudness, duration: self.duration, completion: completion)
     }
     
-    public func loudness(loudness: Loudness) -> Note {
+    public func loudness(_ loudness: Loudness) -> Note {
         var note = self
         note.loudness = loudness
         return note

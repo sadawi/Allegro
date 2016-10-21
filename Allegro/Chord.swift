@@ -23,11 +23,11 @@ public struct Chord: Hashable, Transposable {
     /**
      Add a duration to a chord.
      */
-    public func note(duration:Duration) -> ChordedNote {
+    public func note(_ duration:Duration) -> ChordedNote {
         return ChordedNote(chord:self, duration:duration)
     }
 
-    public func transposed(semitones semitones: Double) -> Chord {
+    public func transposed(semitones: Double) -> Chord {
         return Chord(self.pitches.map{ $0.transposed(semitones: semitones) })
     }
     

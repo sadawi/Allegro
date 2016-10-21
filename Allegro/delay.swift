@@ -8,12 +8,8 @@
 
 import Foundation
 
-public func delay(delay:NSTimeInterval, _ closure:(Void->Void)?) {
+public func delay(_ delay:TimeInterval, _ closure:((Void)->Void)?) {
     guard let closure = closure else { return }
-    dispatch_after(
-        dispatch_time(
-            DISPATCH_TIME_NOW,
-            Int64(delay * Double(NSEC_PER_SEC))
-        ),
-        dispatch_get_main_queue(), closure)
+    DispatchQueue.main.asyncAfter(
+        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
 }

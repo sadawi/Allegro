@@ -11,10 +11,10 @@ import Foundation
 /**
  An Expression containing subexpressions that are realized in timewise sequence, one after the other.
  */
-public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStringConvertible {
-    public var expressions:[Expression] = []
+open class SequenceExpression: Expression, ExpressibleByArrayLiteral, CustomStringConvertible {
+    open var expressions:[Expression] = []
     
-    public var head:Expression? {
+    open var head:Expression? {
         if self.expressions.count > 0 {
             return self.expressions[0]
         } else {
@@ -22,7 +22,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         }
     }
     
-    public var tail:SequenceExpression? {
+    open var tail:SequenceExpression? {
         if self.expressions.count > 1 {
             let a = self.expressions
             return SequenceExpression(Array(a[1..<a.count]))
@@ -43,7 +43,7 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         self.expressions = expressions
     }
     
-    public var duration: Duration {
+    open var duration: Duration {
         var result:Double = 0.0
         for expression in self.expressions {
             result += expression.duration.length
@@ -51,15 +51,15 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         return Duration(length: result)
     }
     
-    public func copy() -> Self {
-        return self.dynamicType.init(self.expressions)
+    open func copy() -> Self {
+        return type(of: self).init(self.expressions)
     }
     
-    public func add(expression:Expression) {
+    open func add(_ expression:Expression) {
         self.expressions.append(expression)
     }
     
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    open func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         if let head = self.head {
             head.perform(on: performer) {
                 if let tail = self.tail {
@@ -73,11 +73,11 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         }
     }
     
-    public func firstChord() -> Chord? {
+    open func firstChord() -> Chord? {
         return self.head?.firstChord()
     }
     
-    public func cut(at offset: Duration) -> (Expression?, Expression?) {
+    open func cut(at offset: Duration) -> (Expression?, Expression?) {
         if offset.length == 0 {
             return (nil, self)
         }
@@ -118,8 +118,8 @@ public class SequenceExpression: Expression, ArrayLiteralConvertible, CustomStri
         return (head, tail)
     }
     
-    public var description:String {
-        return self.expressions.map { "(\($0))" }.joinWithSeparator(" ")
+    open var description:String {
+        return self.expressions.map { "(\($0))" }.joined(separator: " ")
     }
     
 }

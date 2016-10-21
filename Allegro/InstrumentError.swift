@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum InstrumentError: ErrorType {
-    case Error
+enum InstrumentError: Error {
+    case error
 }
