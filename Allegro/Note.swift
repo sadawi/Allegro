@@ -11,10 +11,6 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
     public var pitch:Pitch
     public var duration:Duration
     public var loudness:Loudness = 𝆐𝆑
-
-    public var clone: Note {
-        return Note(pitch: self.pitch, duration: self.duration, loudness: self.loudness)
-    }
     
     init(pitch:Pitch, duration:Duration) {
         self.pitch = pitch
@@ -51,7 +47,7 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
     }
     
     public func loudness(loudness: Loudness) -> Note {
-        var note = self.clone
+        var note = self
         note.loudness = loudness
         return note
     }
