@@ -46,12 +46,6 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
         performer.perform(pitch: self.pitch, loudness: self.loudness, duration: self.duration, completion: completion)
     }
     
-    public func loudness(_ loudness: Loudness) -> Note {
-        var note = self
-        note.loudness = loudness
-        return note
-    }
-    
     public func firstChord() -> Chord? {
         return Chord([self.pitch])
     }
