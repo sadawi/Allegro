@@ -27,7 +27,7 @@ public struct Pitch: Transposable, Hashable, CustomStringConvertible {
         return PitchClass(semitones: self.semitonesFromBase)
     }
     
-    public func transposed(semitones semitones: Double) -> Pitch {
+    public func transposed(semitones: Double) -> Pitch {
         return Pitch(semitonesFromBase: self.semitonesFromBase + semitones)
     }
     
@@ -36,7 +36,7 @@ public struct Pitch: Transposable, Hashable, CustomStringConvertible {
     /**
     Add a duration to a pitch, and you have a note.
     */
-    public func note(duration:Duration) -> Note {
+    public func note(_ duration:Duration) -> Note {
         return Note(pitch:self, duration:duration)
     }
     

@@ -17,7 +17,7 @@ public struct Tempo {
         self.perMinute = perMinute
     }
     
-    public func timeInterval(for duration:Duration) -> NSTimeInterval {
+    public func timeInterval(for duration:Duration) -> TimeInterval {
         return duration.length / referenceDuration.length / Double(self.perMinute) * 60
     }
     

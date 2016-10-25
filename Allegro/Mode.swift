@@ -9,11 +9,11 @@
 import Foundation
 
 public enum Mode {
-    case Ionian
-    case Dorian
-    case Phrygian
-    case Lydian
-    case Myxolydian
-    case Aeolian
-    case Locrian
+    case ionian
+    case dorian
+    case phrygian
+    case lydian
+    case myxolydian
+    case aeolian
+    case locrian
 }

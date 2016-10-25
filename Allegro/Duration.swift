@@ -22,7 +22,7 @@ public struct Duration: Equatable, Comparable, CustomStringConvertible {
         return self.tuplet(3)!
     }
     
-    public func tuplet(number:Int) -> Duration? {
+    public func tuplet(_ number:Int) -> Duration? {
         if number > 1 {
             return self * Double(number-1) / Double(number)
         } else {

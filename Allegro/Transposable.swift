@@ -9,11 +9,11 @@
 import Foundation
 
 public protocol Transposable {
-    func transposed(semitones semitones: Double) -> Self
+    func transposed(semitones: Double) -> Self
 }
 
 public extension Transposable {
-    func transposed(semitones semitones: Int) -> Self {
+    func transposed(semitones: Int) -> Self {
         return self.transposed(semitones: Double(semitones))
     }
     

@@ -8,8 +8,8 @@
 
 import Foundation
 
-postfix operator ♯ { }
-postfix operator ♭ { }
+postfix operator ♯
+postfix operator ♭
 
 public postfix func ♯(pitchClass:PitchClass) -> PitchClass {
     return pitchClass.sharp
@@ -54,7 +54,7 @@ public struct PitchClass: Hashable, Transposable, CustomStringConvertible {
     }
     
     // TODO: keep track of spelling.  Interval transpositions should result in the correct new spelling.
-    public func transposed(semitones semitones: Double) -> PitchClass {
+    public func transposed(semitones: Double) -> PitchClass {
         return PitchClass(semitones: self.semitones + semitones)
     }
     
@@ -68,7 +68,7 @@ public struct PitchClass: Hashable, Transposable, CustomStringConvertible {
         return self.pitch(octave)
     }
     
-    public func pitch(octave:Int) -> Pitch {
+    public func pitch(_ octave:Int) -> Pitch {
         return Pitch(semitonesFromBase: Double(octave) * Interval.Octave.semitones + Double(self.semitones))
     }
     

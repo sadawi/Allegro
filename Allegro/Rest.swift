@@ -15,7 +15,7 @@ public struct Rest: SimpleExpression, Equatable {
         self.duration = duration
     }
     
-    public func perform(on performer: Performer, completion: (Void -> Void)?) {
+    public func perform(on performer: Performer, completion: ((Void) -> Void)?) {
         performer.perform(duration: self.duration, completion: completion)
     }
 

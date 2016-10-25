@@ -9,48 +9,41 @@
 import Foundation
 
 public enum InstrumentState {
-    case Playing
-    case Paused
-    case Stopped
+    case playing
+    case paused
+    case stopped
 }
 
-public protocol Performer {
-    func stop()
-    func play(expression: Expression)
-    func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?)
-    func perform(duration duration:Duration, completion:(Void -> Void)?)
-}
+open class Instrument: Performer {
+    open var state:InstrumentState = .stopped
+    open var tempo:Tempo = Tempo(100)
 
-public class Instrument: Performer {
-    public var state:InstrumentState = .Stopped
-    public var tempo:Tempo = Tempo(100)
-
-    public func stop() {
-        self.state = .Stopped
+    open func stop() {
+        self.state = .stopped
     }
     
-    public func play(expression: Expression) {
+    open func perform(expression: Expression) {
         // TODO: a stop that actually works here, when I redo the timing system.
         self.stop()
-        self.state = .Playing
+        self.state = .playing
         expression.perform(on: self, completion: nil)
     }
     
-    public func perform(duration duration:Duration, completion:(Void -> Void)?) {
+    open func perform(duration:Duration, completion:((Void) -> Void)?) {
         self.perform(pitch: nil, loudness: nil, duration: duration, completion: completion)
     }
     
-    public func perform(pitch pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:(Void -> Void)?) {
-        guard self.state != .Stopped else { return }
+    open func perform(pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:((Void) -> Void)?) {
+        guard self.state != .stopped else { return }
         
         let interval = self.tempo.timeInterval(for: duration)
-        if let pitch = pitch, loudness = loudness {
+        if let pitch = pitch, let loudness = loudness {
             self.startPlayingPitch(pitch, loudness: loudness)
             
             // TODO: a more accurate, cancelable timer
             delay(interval) {
                 self.stopPlayingPitch(pitch)
-                if self.state == .Playing {
+                if self.state == .playing {
                     completion?()
                 }
             }
@@ -60,11 +53,11 @@ public class Instrument: Performer {
     }
 
     // TODO: maybe move this into the Sampler subclass.  the separate start/stop
-    func startPlayingPitch(pitch:Pitch, loudness:Loudness) {
+    func startPlayingPitch(_ pitch:Pitch, loudness:Loudness) {
         
     }
     
-    func stopPlayingPitch(pitch:Pitch) {
+    func stopPlayingPitch(_ pitch:Pitch) {
         
     }
 }

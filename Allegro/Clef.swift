@@ -9,19 +9,19 @@
 import Foundation
 
 public enum ClefType {
-    case G
-    case C
-    case F
-    case Percussion
+    case g
+    case c
+    case f
+    case percussion
 }
 
 public enum Clef {
-    case Treble
-    case Bass
-    case Alto
+    case treble
+    case bass
+    case alto
 }
 
-public let 𝄞 = ClefType.G
-public let 𝄢 = ClefType.F
-public let 𝄡 = ClefType.C
-public let 𝄥 = ClefType.Percussion
+public let 𝄞 = ClefType.g
+public let 𝄢 = ClefType.f
+public let 𝄡 = ClefType.c
+public let 𝄥 = ClefType.percussion

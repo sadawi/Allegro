@@ -1,4 +1,6 @@
 use_frameworks!
 
-pod 'Allegro', :path => '..'
-pod 'PrimarySource', :git => 'git@github.com:sadawi/PrimarySource', :tag => '0.1.0'
+target 'AllegroExample' do
+    pod 'Allegro', :path => '..'
+    pod 'PrimarySource', :git => 'git@github.com:sadawi/PrimarySource', :tag => "0.12.0"
+end

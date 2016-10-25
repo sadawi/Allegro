@@ -32,6 +32,7 @@
 		22D7C2CB1C21AF580044D133 /* Allegro.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2CA1C21AF580044D133 /* Allegro.podspec */; };
 		22D7C2D01C21CAFB0044D133 /* GeneratorExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */; };
 		22D7C2D31C21E0DF0044D133 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C2D21C21E0DF0044D133 /* Transformer.swift */; };
+		22DC70C11DBEF77C0025F1B8 /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC70C01DBEF77C0025F1B8 /* Performer.swift */; };
 		22E7BF971C1E996A0014FC22 /* SamplerInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */; };
 		22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF981C1E998E0014FC22 /* Instrument.swift */; };
 		22E7BF9B1C1E9AFB0014FC22 /* MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */; };
@@ -80,6 +81,7 @@
 		22D7C2CA1C21AF580044D133 /* Allegro.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Allegro.podspec; sourceTree = "<group>"; };
 		22D7C2CF1C21CAFB0044D133 /* GeneratorExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorExpression.swift; sourceTree = "<group>"; };
 		22D7C2D21C21E0DF0044D133 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		22DC70C01DBEF77C0025F1B8 /* Performer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Performer.swift; sourceTree = "<group>"; };
 		22E7BF961C1E996A0014FC22 /* SamplerInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplerInstrument.swift; sourceTree = "<group>"; };
 		22E7BF981C1E998E0014FC22 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDI.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				22E7BF981C1E998E0014FC22 /* Instrument.swift */,
 				22E7BF9A1C1E9AFB0014FC22 /* MIDI.swift */,
 				22E7BF9C1C1EA1580014FC22 /* InstrumentError.swift */,
+				22DC70C01DBEF77C0025F1B8 /* Performer.swift */,
 			);
 			name = players;
 			sourceTree = "<group>";
@@ -315,9 +318,11 @@
 				TargetAttributes = {
 					22C8F4D81C125E2800B1952B = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 					22C8F4E21C125E2800B1952B = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -368,6 +373,7 @@
 				22C8F4F41C125EE000B1952B /* Pitch.swift in Sources */,
 				22C8F4FE1C12A12D00B1952B /* ChordedNote.swift in Sources */,
 				22E7BFA21C1F23F80014FC22 /* Tempo.swift in Sources */,
+				22DC70C11DBEF77C0025F1B8 /* Performer.swift in Sources */,
 				22C8F5161C13552000B1952B /* PitchClass.swift in Sources */,
 				22E7BF991C1E998E0014FC22 /* Instrument.swift in Sources */,
 				22E7BF9D1C1EA1580014FC22 /* InstrumentError.swift in Sources */,
@@ -518,6 +524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -535,6 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.Allegro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -545,6 +553,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.AllegroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -555,6 +564,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.AllegroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
