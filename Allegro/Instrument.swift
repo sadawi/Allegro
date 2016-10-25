@@ -22,7 +22,7 @@ open class Instrument: Performer {
         self.state = .stopped
     }
     
-    open func play(_ expression: Expression) {
+    open func perform(expression: Expression) {
         // TODO: a stop that actually works here, when I redo the timing system.
         self.stop()
         self.state = .playing

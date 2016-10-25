@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Performer {
     func stop()
-    func play(_ expression: Expression)
+    func perform(expression: Expression)
     func perform(pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:((Void) -> Void)?)
     func perform(duration:Duration, completion:((Void) -> Void)?)
 }
