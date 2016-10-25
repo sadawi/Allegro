@@ -14,8 +14,8 @@ open class SamplerInstrument: Instrument {
     open var patchNumber:UInt8
     open var bank:UInt8 = UInt8(kAUSampler_DefaultMelodicBankMSB)
     
-    fileprivate let sampler = AVAudioUnitSampler()
-    fileprivate let engine = AVAudioEngine()
+    private let sampler = AVAudioUnitSampler()
+    private let engine = AVAudioEngine()
     
     public init?(filename:String, patchNumber:UInt8) {
         self.filename = filename
@@ -42,7 +42,7 @@ open class SamplerInstrument: Instrument {
     
     // MARK: - MIDI
     
-    fileprivate func setup() throws {
+    private func setup() throws {
         self.engine.attach(self.sampler)
         self.engine.connect(self.sampler, to: self.engine.outputNode, format: nil)
         
