@@ -14,11 +14,10 @@
 		22D7C2C11C21AED10044D133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2BF1C21AED10044D133 /* LaunchScreen.storyboard */; };
 		22D7C2C91C21AEE10044D133 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2C81C21AEE10044D133 /* Podfile */; };
 		22D7C2CD1C21B0610044D133 /* AJH_Piano.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C2CC1C21B0610044D133 /* AJH_Piano.sf2 */; };
-		F263F1A24AABC66C67F6E55C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625EF327F92F0AEE1282F5DE /* Pods.framework */; };
+		E5D883F8C87E0E240AE495AA /* Pods_AllegroExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDB3F5F5DD73DCF688DBFC1 /* Pods_AllegroExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04C0DB61CDAD42B8BABE1574 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		22D7C2B31C21AED10044D133 /* AllegroExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllegroExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7C2B61C21AED10044D133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22D7C2B81C21AED10044D133 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,8 +27,10 @@
 		22D7C2C21C21AED10044D133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D7C2C81C21AEE10044D133 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		22D7C2CC1C21B0610044D133 /* AJH_Piano.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AJH_Piano.sf2; sourceTree = "<group>"; };
+		33702128FA479962B5F65653 /* Pods-AllegroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllegroExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllegroExample/Pods-AllegroExample.debug.xcconfig"; sourceTree = "<group>"; };
+		5DDB3F5F5DD73DCF688DBFC1 /* Pods_AllegroExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllegroExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625EF327F92F0AEE1282F5DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFBB827EA8E342119AC68526 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		807FB280B2EE34B85EC08D2A /* Pods-AllegroExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllegroExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllegroExample/Pods-AllegroExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F263F1A24AABC66C67F6E55C /* Pods.framework in Frameworks */,
+				E5D883F8C87E0E240AE495AA /* Pods_AllegroExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +51,8 @@
 				22D7C2C81C21AEE10044D133 /* Podfile */,
 				22D7C2B51C21AED10044D133 /* AllegroExample */,
 				22D7C2B41C21AED10044D133 /* Products */,
-				9DFFD195F3839F155FED1C6A /* Pods */,
 				F0B8208BE97458EFF91540D1 /* Frameworks */,
+				4D584127198E19DDA3B2E98A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +78,11 @@
 			path = AllegroExample;
 			sourceTree = "<group>";
 		};
-		9DFFD195F3839F155FED1C6A /* Pods */ = {
+		4D584127198E19DDA3B2E98A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04C0DB61CDAD42B8BABE1574 /* Pods.debug.xcconfig */,
-				CFBB827EA8E342119AC68526 /* Pods.release.xcconfig */,
+				33702128FA479962B5F65653 /* Pods-AllegroExample.debug.xcconfig */,
+				807FB280B2EE34B85EC08D2A /* Pods-AllegroExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -90,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				625EF327F92F0AEE1282F5DE /* Pods.framework */,
+				5DDB3F5F5DD73DCF688DBFC1 /* Pods_AllegroExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,12 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22D7C2C51C21AED10044D133 /* Build configuration list for PBXNativeTarget "AllegroExample" */;
 			buildPhases = (
-				07473EDB7CF1D6B236DF6206 /* Check Pods Manifest.lock */,
+				266FC2C086A12A55629E2B65 /* [CP] Check Pods Manifest.lock */,
 				22D7C2AF1C21AED10044D133 /* Sources */,
 				22D7C2B01C21AED10044D133 /* Frameworks */,
 				22D7C2B11C21AED10044D133 /* Resources */,
-				3A6D89684ABD609D7D932C1D /* Embed Pods Frameworks */,
-				156CA005AEF0012AB61DBB34 /* Copy Pods Resources */,
+				03C33B69B43207905D8283BA /* [CP] Embed Pods Frameworks */,
+				88A8AD990F0AD26E104E7A79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +131,7 @@
 				TargetAttributes = {
 					22D7C2B21C21AED10044D133 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -166,49 +169,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07473EDB7CF1D6B236DF6206 /* Check Pods Manifest.lock */ = {
+		03C33B69B43207905D8283BA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllegroExample/Pods-AllegroExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		156CA005AEF0012AB61DBB34 /* Copy Pods Resources */ = {
+		266FC2C086A12A55629E2B65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3A6D89684ABD609D7D932C1D /* Embed Pods Frameworks */ = {
+		88A8AD990F0AD26E104E7A79 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllegroExample/Pods-AllegroExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -330,7 +333,7 @@
 		};
 		22D7C2C61C21AED10044D133 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04C0DB61CDAD42B8BABE1574 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 33702128FA479962B5F65653 /* Pods-AllegroExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AllegroExample/Info.plist;
@@ -338,12 +341,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.AllegroExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		22D7C2C71C21AED10044D133 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFBB827EA8E342119AC68526 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 807FB280B2EE34B85EC08D2A /* Pods-AllegroExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AllegroExample/Info.plist;
@@ -351,6 +355,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = samwilliams.AllegroExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

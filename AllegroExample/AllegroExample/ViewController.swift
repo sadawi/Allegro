@@ -17,26 +17,26 @@ class ViewController: DataSourceViewController {
         super.viewDidLoad()
     }
     
-    func play(expression:Expression) {
-        self.piano.play(expression)
+    func play(_ expression:Expression) {
+        self.piano.perform(expression: expression)
     }
     
     @IBAction func stop() {
         self.piano.stop()
     }
     
-    override func configureDataSource(dataSource: DataSource) {
+    override func configureDataSource(_ dataSource: DataSource) {
         dataSource <<< Section { section in
             
-            section <<< TableViewItem<TableCell> { cell in
+            section <<< CollectionItem<TableCell> { cell in
                 cell.textLabel?.text = "Melody and chords"
                 }.onTap { _ in
                     let melody = SequenceExpression(C.naturalMinorScale.pitches(startingInOctave: 4).map { $0/4 })
-                    let chords = SequenceExpression([C.naturalMinorScale.triad(from: .Tonic, octave: 3) / 1, C.naturalMinorScale.triad(from: .Dominant, octave: 3) / 1])
+                    let chords = SequenceExpression([C.naturalMinorScale.triad(from: .tonic, octave: 3) / 1, C.naturalMinorScale.triad(from: .dominant, octave: 3) / 1])
                     self.play(melody|chords)
             }
             
-            section <<< TableViewItem<TableCell> { cell in
+            section <<< CollectionItem<TableCell> { cell in
                 cell.textLabel?.text = "Sequence with rest"
                 }.onTap { _ in
                     let music = A[4]/4 + G[4]/8 + B[4]/8 + R/8 + A[4]/2
@@ -50,7 +50,7 @@ class ViewController: DataSourceViewController {
 //                    self.play(generator)
 //            }
             
-            section <<< TableViewItem<TableCell> { cell in
+            section <<< CollectionItem<TableCell> { cell in
                 cell.textLabel?.text = "Generator"
                 }.onTap { _ in
                     let melody = A[4]/4 + G[4]/4 + B[4]/4 + A[4]/4 + G[4]/4 + B[4]/4
@@ -59,10 +59,10 @@ class ViewController: DataSourceViewController {
             }
 
             
-            section <<< TableViewItem<TableCell> { cell in
+            section <<< CollectionItem<TableCell> { cell in
                 cell.textLabel?.text = "Dynamics"
                 }.onTap { _ in
-                    let music = (A[4]/4).loudness(𝆑) + (A[4]/4).loudness(𝆐𝆏) + (A[4]/4).loudness(𝆑𝆑𝆑)
+                    let music = (A[4]/4).with(loudness: 𝆑) + (A[4]/4).with(loudness: 𝆐𝆏) + (A[4]/4).with(loudness: 𝆑𝆑𝆑)
                     self.play(music)
             }
 
