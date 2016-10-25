@@ -14,13 +14,6 @@ public enum InstrumentState {
     case stopped
 }
 
-public protocol Performer {
-    func stop()
-    func play(_ expression: Expression)
-    func perform(pitch:Pitch?, loudness:Loudness?, duration:Duration, completion:((Void) -> Void)?)
-    func perform(duration:Duration, completion:((Void) -> Void)?)
-}
-
 open class Instrument: Performer {
     open var state:InstrumentState = .stopped
     open var tempo:Tempo = Tempo(100)
