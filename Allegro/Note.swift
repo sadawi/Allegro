@@ -50,6 +50,12 @@ public struct Note: Sounded, SimpleExpression, Transposable, Equatable, CustomSt
         return Chord([self.pitch])
     }
     
+    public func with(loudness: Loudness) -> Note {
+        var result = self
+        result.loudness = loudness
+        return result
+    }
+    
     public func copy() -> Note {
         return Note(pitch: self.pitch, duration: self.duration, loudness: self.loudness)
     }
